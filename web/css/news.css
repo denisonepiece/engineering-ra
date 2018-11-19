@@ -1,0 +1,110 @@
+.news-block {
+    background-color: #FFF;
+    margin-bottom: 2em;
+    min-height: 19em;
+}
+
+.news-block__header {
+    display: -webkit-flex;
+    display: -webkit-box;
+    display: -moz-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+    margin-bottom: 2em;
+}
+
+.header__publ-type {
+    align-self: flex-start;
+    background-color: #efd0ca;
+    color: #5b4132;
+    font-size: .9rem;
+    padding: .4em .8em;
+    margin-bottom: 1.6em;
+    transition: all 150ms ease-out;
+}
+
+.news-block__anons {
+    margin-bottom: 2em;
+}
+
+.news-block__footer {
+    display: -webkit-flex;
+    display: -webkit-box;
+    display: -moz-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+
+    padding-bottom: 2.3em;
+}
+
+.footer__news-date {
+    font-size: .9rem;
+    color: #ba877b;
+}
+
+.news-block > .news-block__header > .header-block {
+    transition: all 150ms ease-out;
+}
+
+.news-block:hover .header__publ-type {
+    background-color: #f55b05;
+    color: #FFF;
+}
+
+.news-block:hover .header-block {
+    color: #f55b05;
+}
+
+.news-date {
+    display: block;
+    font-size: .9rem;
+    color: #b2b2b2;
+    margin-top: .7em;
+}
+
+.mews-full__footer {
+    display: -webkit-flex;
+    display: -webkit-box;
+    display: -moz-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+}
+
+@media screen and (max-width:460px) {
+
+  .mews-full__footer div:first-child {
+    margin-bottom: 2em;
+  }
+
+}

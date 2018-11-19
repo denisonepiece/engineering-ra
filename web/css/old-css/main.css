@@ -1,0 +1,744 @@
+@font-face {
+    font-family: 'RobotoRegular';
+    src: url('../fonts/Roboto-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OswaldSemiBold';
+    src: url('../fonts/Oswald-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'RobotoBlack';
+    src: url('../fonts/Roboto-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    font-size: 16px;
+    color: #1a1a1a;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+    font-family: 'RobotoRegular';
+    background-color: #f5f1ee;
+    height: 100%;
+}
+
+
+.stock-sec-padd {
+    padding-top: 3.5em;
+    padding-bottom: 3.5em;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+
+.content-container {
+    flex: 1 0 auto;
+}
+
+footer {
+    flex: 0 0 auto;
+}
+
+/**** Меню ****/
+
+.main-menu {
+    background-color: #FFF;
+    display: flex;
+    -moz-display: flex;
+    -webkit-display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-logo img {
+    height: 2.5em;
+}
+
+.main-menu > .main-menu__right {
+    display: flex;
+    -moz-display: flex;
+    -webkit-display: flex;
+}
+
+.main-menu > .main-menu__right > .right__menu-list ul {
+    display: flex;
+    -moz-display: flex;
+    -webkit-display: flex;
+}
+
+.main-menu > .main-menu__right > .right__menu-list ul li {
+    margin-right: 2em;
+}
+
+.main-menu > .main-menu__right > .right__menu-list ul li:last-child {
+    margin-right: 0;
+}
+
+.main-menu > .main-menu__right > .right__menu-list ul li a {
+    color: #5b4132;
+    transition: all 150ms ease-out;
+}
+
+.main-menu > .main-menu__right > .right__menu-list ul li a:hover {
+    color: #f55b05;
+}
+
+/***** Глобальные свойства *****/
+
+/** Сброс **/
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+ul li a {
+    text-decoration: none;
+}
+
+.col-no-padding {
+    padding-right: 0rem;
+    padding-left: 0rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/** Для отзывчивости img в контенте **/
+
+.img-responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+
+/** Правило отступов для глобальных блоков (лево и право) **/
+
+.rule-padd-lr {
+    padding-left: 2.1em;
+    padding-right: 2.1em;
+}
+
+/** Правило отступов для глобальных блоков (все грани) **/
+
+.rule-padd-lr-tb {
+    padding: 1.6em 2.3em;
+}
+
+/** Правило отступов для глобальных блоков (низ и верх) **/
+
+.rule-padd-tb-mini {
+    padding-top: 1.7em;
+    padding-bottom: 1.7em;
+}
+
+
+/***** Типографика *****/
+
+h1,
+h2,
+h3,
+h4 {
+    padding: 0;
+    margin: 0;
+}
+
+.header-block {
+    color: #5b4132;
+}
+
+/** Большой отступ заголовка от основного контента **/
+
+.header-block--bmrg {
+    margin-bottom: 1.3em;
+}
+
+
+/** Большой отступ заголовка от подзагловока **/
+
+.header-block--bmrg-under {
+    margin-bottom: 1.5em;
+}
+
+
+/** Большой отступ заголовка с подзаголовком от контента **/
+
+.header-block-wrp--bmrg {
+    margin-bottom: 3em;
+}
+
+h1 {
+    font-family: 'OswaldSemiBold';
+    font-size: 1.9rem;
+}
+
+h2 {
+    font-family: 'OswaldSemiBold';
+    font-size: 1.3rem;
+}
+
+h3 {
+    font-family: 'RobotoBlack';
+    font-size: 1rem;
+    line-height: 1.4em;
+}
+
+h1.header-mainSlider {
+    font-size: 1.4rem;
+}
+
+.base-text {
+    font-family: 'RobotoRegular';
+    font-size: .9rem;
+    line-height: 1.8em;
+}
+
+
+.top-border-sec {
+    border-top: solid #b2b2b2 1px;
+}
+
+
+/*** Для контента который хочет отступить сверху и снизу;) РЕФАКТ!***/
+
+.for-content-ptop {
+    padding-top: 3.5em;
+    padding-bottom: 3.5em;
+}
+
+.for-content-ptop-top {
+    padding-top: 3.5em;
+}
+
+.for-content-mb {
+    margin-bottom: 3.5em;
+}
+
+/********** Кнопки **********/
+
+.btn {
+    /* Базовый класс для кнопок с общими характеристиками */
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    vertical-align: middle;
+    transition: all 150ms ease-out;
+}
+
+.more-link {
+    text-decoration: underline;
+    color: #5b4132;
+    font-size: .9rem;
+}
+
+.more-link:hover {
+    color: #f55b05;
+}
+
+.btn-group {
+    display: flex;
+    -moz-display: flex;
+    -webkit-display: flex;
+}
+
+.one-btn {
+    background-color: #5b4132;
+    padding: .9em 1.8em;
+    font-family: 'RobotoRegular';
+    font-size: .9rem;
+    color: #FFF;
+}
+
+.one-btn:hover {
+    background-color: #f55b05;
+}
+
+.one-btn:active {
+    background-color: #f48047;
+}
+
+.pag-btn {
+    background-color: #FFF;
+    padding: 0.9em 1.2em;
+    margin-right: 2px;
+    cursor: pointer;
+}
+
+.pag-btn svg {
+    height: 1.1rem;
+    fill: #5b4132;
+}
+
+.pag-btn:hover svg {
+    fill: #FFF;
+}
+
+.pag-btn:hover {
+    background-color: #f55b05;
+}
+
+.pag-btn:focus {
+    background-color: #f55b05;
+}
+
+.pag-btn:active {
+    background-color: #f48047;
+}
+
+
+/** Паг с текстом **/
+
+.pag-text {
+    background-color: #5b4132;
+    margin-right: 1em;
+}
+
+.pag-text:last-child {
+    margin-right: 0;
+}
+
+.pag-text svg {
+    fill: #FFF;
+    vertical-align: middle;
+    height: .9rem;
+}
+
+.pag-text svg:first-child {
+    margin-right: .4em;
+}
+
+.pag-text svg:last-child {
+    margin-left: .4em;
+}
+
+.pag-text span {
+    color: #FFF;
+    font-size: .9rem;
+}
+
+
+.pag-page {
+    display: flex;
+    -moz-display: flex;
+    -webkit-display: flex;
+    justify-content: flex-end;
+}
+
+.pag-page__number {
+    display: flex;
+    -moz-display: flex;
+    -webkit-display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 1em;
+}
+
+.pag-page__number > ul {
+    display: flex;
+    -moz-display: flex;
+    -webkit-display: flex;
+}
+
+.pag-page__number > ul > li {
+    font-size: .950rem;
+
+}
+
+.pag-page__number > ul > li > a {
+    color: #5b4132;
+    display: block;
+    margin-right: .4em;
+    margin-left: .4em;
+    padding: .150em .52em .14em .52em;
+}
+
+.pag-page__number > ul > li > a:first-child {
+    margin-left: 0;
+}
+
+.number-link {
+    border: solid transparent 1px;
+
+}
+
+.pag-page__number > ul > li:nth-child(4):before {
+    content: '. . .';
+    margin-right: .4em;
+    margin-left: .4em;
+}
+
+.number-empty {
+    padding-top: .2em;
+}
+
+.pag-page__number > ul > li > a:hover {
+    border: solid #f55b05 1px;
+    border-radius: 100%;
+    color: #f55b05;
+}
+
+.pag-page__number--active {
+    border: solid #5b4132 1px;
+    border-radius: 100%;
+}
+
+
+/** Ссылки **/
+
+.decor-link {
+    color: #5b4132;
+    font-size: .9rem;
+    margin-bottom: 1.7em;
+}
+
+.decor-link svg {
+    height: .9em;
+    fill: #5b4132;
+    vertical-align: middle;
+    margin-right: .3em;
+    transition: all 150ms ease-out;
+}
+
+.decor-link:hover,
+.decor-link:hover svg {
+    color: #f55b05;
+    fill: #f55b05;
+}
+
+.decor-link:active,
+.decor-link:active svg {
+    color: #f48047;
+    fill: #f48047;
+}
+
+.tabs-line {
+    display: flex;
+}
+
+.tabs-line > .btn-group > .tab-btn {
+    margin-right: 1em;
+}
+
+
+
+/*** Логика табов РЕФАКТОРИНГ старт ***/
+
+.tabs__item {
+    display: none;
+}
+
+.tabs__item--active {
+    display: block;
+}
+
+.tabs__controls-link--active > .tab-btn {
+    background-color: #5b4132;
+    color: #FFF;
+}
+
+
+.tabs__controls-link--active > .tab-btn:hover {
+    background-color: #5b4132;
+    color: #FFF;
+}
+
+/*** Логика табов РЕФАКТОРИНГ конец ***/
+
+.tab-btn {
+    background-color: #FFF;
+    font-family: 'RobotoBlack';
+    color: #5b4132;
+    font-size: 1.1rem;
+    padding-right: 6.5em;
+}
+
+
+.tab-btn:hover {
+    background-color: #efd0ca;
+}
+
+
+
+/** Активный таб (доб. через js) **/
+
+.tab-btn--active {
+    background-color: #5b4132;
+    color: #FFF;
+}
+
+.tab-btn--active:hover {
+    color: #5b4132;
+}
+
+.white-color {
+    color: #FFF;
+}
+
+
+/**** Манипуляторы ****/
+
+.filter-publ-block {
+    background-color: #FFF;
+    display: flex;
+    -moz-display: flex;
+    -webkit-display: flex;
+    color: #5b4132;
+}
+
+.left__description-block,
+.right__description-block {
+    margin-right: 2em;
+    display: flex;
+    align-items: center;
+}
+
+.filter-publ-block__left {
+    border-right: solid #f5f1ee 2px;
+    display: flex;
+    -moz-display: flex;
+    -webkit-display: flex;
+}
+
+.filter-publ-block__right {
+    display: flex;
+    -moz-display: flex;
+    -webkit-display: flex;
+}
+
+.left__function-block,
+.right__function-block {
+    display: flex;
+    -moz-display: flex;
+    -webkit-display: flex;
+    align-items: center;
+}
+
+.left__function-block div,
+.right__function-block div {
+    margin-right: 2em;
+}
+
+.right__function-block div {
+    display: flex;
+    align-items: center;
+}
+
+.right__function-block div span {
+    margin-right: .6em;
+}
+
+
+/**** Футтер ****/
+
+.footer {
+    background-color: #5b4132;
+    display: flex;
+    -moz-display: flex;
+    -webkit-display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    color: #FFF;
+}
+
+.footer__left > .left__logo {
+    margin-bottom: 1em;
+}
+
+.footer__left > .left__logo img {
+    height: 2em;
+
+}
+
+.footer__left > .left__social img {
+    height: .9em;
+    margin-right: .5em;
+}
+
+.footer__middle > .middle_menu {
+    display: flex;
+    -moz-display: flex;
+    -webkit-display: flex;
+}
+
+.footer__middle > .middle_menu ul {
+    margin-right: 4em;
+}
+
+.footer__middle > .middle_menu ul li {
+    margin-bottom: .8em;
+
+}
+
+.footer__middle > .middle_menu ul li a {
+    color: #FFF;
+    font-size: .8rem;
+}
+
+.footer__right > .right__contacts {
+    display: flex;
+    -moz-display: flex;
+    -webkit-display: flex;
+    flex-direction: column;
+    font-size: .8rem;
+}
+
+
+
+
+
+
+
+/**** Контакты + карта ****/
+
+.contacts-block {
+    display: flex;
+    height: 30em;
+    position: relative;
+}
+
+.contacts-block__desc {
+    background-color: #FFF;
+    align-self: center;
+    width: 23%;
+    z-index: 30;
+}
+
+.contacts-block__desc div {
+    margin-bottom: 1.5em;
+}
+
+.contacts-block__desc div:last-child {
+    margin-bottom: 0;
+}
+
+.contacts-block__map {
+    width: 85%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    position: absolute;
+    z-index: 20;
+}
+
+.mapshow {
+    height: 100%;
+}
+
+
+/*** Интро-блок после меню (главная)***/
+
+.intro-block__content {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+
+/*** Модальное окно ***/
+
+.modal-container {
+    z-index: 1000;
+    position: absolute;
+    background-color: #FFF;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    display: none;
+}
+
+.modal-container__modal-dialog {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.modal-dialog__modal-header {
+    padding-top: 1em;
+    padding-bottom: 3em;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.modal-header__close-btn {
+    align-self: flex-end;
+    cursor: pointer;
+    margin-bottom: 1.5em;
+}
+
+.modal-header__close-btn svg{
+    fill: #5b4132;
+    height: 1.8em;
+}
+
+.modal-header__close-btn svg:hover{
+    fill: #f55b05;
+}
+
+.modal-dialog__modal-body {
+    margin-bottom: 1em;
+}
+
+
+/* Открываем окно */
+
+.modal-visible {
+    display: flex;
+}
+
+
+/*** Форма ***/
+
+.stock-form > div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.8em;
+    color: #5b4132;
+}
+
+.stock-form > div > label {
+    margin-bottom: .4em;
+    font-size: .9rem;
+    color: #5b4132;
+}
+
+.stock-form > div > input {
+    width: 16.5em;
+    padding: .7em;
+    color: #5b4132;
+    outline: none;
+    border: solid #5b4132 1px;
+}
+
+.stock-form > div > input:focus {
+    border: solid #f55b05 1px;
+}
+
+.modal-dialog__modal-body .one-btn {
+    align-self: flex-start;
+}

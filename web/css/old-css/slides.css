@@ -1,0 +1,137 @@
+/**** Обертка ****/
+
+.slideshow-container {
+    height: 29.5em;
+    position: relative;
+}
+
+
+/**** Обертка слайдов ****/
+
+.slideshow-container__slide {
+    height: 100%;
+    position: absolute;
+    display: flex;
+}
+
+
+/**** Контент ****/
+
+.slide__desc {
+    display: flex;
+    align-self: flex-end;
+    width: 65%;
+    height: 80%;
+    z-index: 30;
+    background-color: #FFF;
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.23);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.23);
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.23);
+}
+
+
+/**** Заголовок контента ****/
+
+.desc__anons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+/**** Текст ****/
+
+.anons__text {
+    color: #666666;
+}
+
+
+/**** BG изображение ****/
+
+.slideshow-container__img {
+    z-index: 20;
+    background-color: aqua;
+    height: 100%;
+    width: 65%;
+    top: 0;
+    right: 0;
+    position: absolute;
+
+}
+
+
+/**** Вперед - назад ****/
+
+.slideshow-container__btn {
+    position: absolute;
+    bottom: 5%;
+    right: 30%;
+    z-index: 50;
+}
+
+.slideshow-container__btn .pag-btn {
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.23);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.23);
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.23);
+
+}
+
+
+/**** Контроль ****/
+
+.slideshow-container__dots {
+    display: flex;
+    position: absolute;
+    top: 105%;
+    right: 50%;
+    z-index: 50;
+}
+
+.slide-dots {
+    height: .9em;
+    width: .9em;
+    display: block;
+    position: relative;
+    cursor: pointer;
+    border-radius: 50%;
+    margin-right: .6em;
+    background-color: #efd0ca;
+}
+
+.slide-dots:last-child {
+    margin-right: 0;
+}
+
+.slide-dots--active,
+.slide-dots:hover {
+    background-color: #f55b05;
+
+}
+
+
+/**** Эффект ****/
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}

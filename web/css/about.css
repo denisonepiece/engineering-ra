@@ -1,0 +1,11 @@
+.about__info-block {
+    background-color: #5b4132;
+    color: #FFF;
+}
+
+
+@media screen and (max-width:767px) {
+  .about__info-block {
+    margin-top: 2em;
+  }
+}

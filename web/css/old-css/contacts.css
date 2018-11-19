@@ -1,0 +1,60 @@
+.contacts__team-card {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3.5em;
+}
+
+.team-card__left {
+    flex: 1;
+
+}
+
+.team-card__left img {
+    height: 12em;
+
+}
+
+.team-card__right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-left: 1.3em;
+}
+
+.card-holder__name {
+    margin-bottom: .5em;
+    color: #5b4132;
+}
+
+.card-holder__post {
+	font-size: .8rem;
+    color: #714130;
+}
+
+.right__cont {
+    color: #5b4132;
+}
+
+.right__cont>div>img {
+    height: 1em;
+    vertical-align: middle;
+    margin-right: .7em;
+}
+
+.contacts__info-block {
+    color: #5b4132;
+}
+
+.info-block__header {
+	margin-bottom: 1em;
+    
+}
+
+.info-block__desc {
+    color: #ba877b;
+}
+
+.contacts__map-info .map-info__map {
+	height: 30em;
+}

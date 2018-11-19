@@ -1,0 +1,99 @@
+/*** Радио батонны ***/
+
+.checkbox-custom,
+.radio-custom {
+    opacity: 0;
+    position: absolute;
+}
+
+.checkbox-custom,
+.checkbox-custom-label,
+.radio-custom,
+.radio-custom-label {
+    cursor: pointer;
+    display: -webkit-flex;
+    display: -webkit-box;
+    display: -moz-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -ms-flex;
+    display: -o-flex;    
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-custom-label,
+.radio-custom-label {
+    position: relative
+}
+
+.checkbox-custom + .checkbox-custom-label:before,
+.radio-custom + .radio-custom-label:before {
+    content: "";
+    background: transparent;
+    border: 1px solid #5b4132;
+    width: .503rem;
+    height: .5rem;
+    padding: .1em;
+    margin-right: .5em;
+    display: inline-block;
+}
+
+.checkbox-custom:checked + .checkbox-custom-label:before,
+.radio-custom:checked + .radio-custom-label:before {
+    background: #f55b05;
+    border: 1px solid #f55b05;
+    box-shadow: inset 0px 0px 0px 2px #FFF;
+    border-color: #f55b05;
+}
+
+.checkbox-custom:checked + .checkbox-custom-label,
+.radio-custom:checked + .radio-custom-label {
+    color: #f55b05;
+}
+
+.radio-custom + .radio-custom-label:before {
+    border-radius: 50%;
+}
+
+
+
+/*** Селекты ***/
+
+.custom-select {
+    border: none;
+    border-radius: 0;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 auto;
+    padding: .3rem 2rem .3rem .8rem;
+    width: 100%;
+    color: #5b4132;
+    outline: none;
+    font-family: 'RobotoRegular';
+    font-size: .9rem;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    .custom-select {
+        background: #f4f1ef url(../web/img/svg_icon/down-arrow.svg) 95% 50% no-repeat;
+        background-size: .9rem;
+    }
+}
+
+
+
+
+/*---- Слайдер -только кастомизация некоторых элементов-----*/
+
+.gallery {
+    height: 23rem;
+    /**max-height:100%**/
+}
+
+.gallery-cell {
+    width: 100%;
+    height: 100%;
+}

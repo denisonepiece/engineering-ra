@@ -1,0 +1,28 @@
+.table__row {
+    display: flex;
+    background-color: #FFF;
+    border-top: solid #efd0ca 1px;    
+}
+
+.table__row--header {
+    display: flex; 
+    color: #ba877b;
+    padding-bottom: .9em;
+    padding-top: .9em;
+}
+
+.table__row:last-child {
+    border-bottom: solid #efd0ca 1px;  
+}
+
+.row__name {
+    flex: 1.4;
+}
+
+.row__working {
+    flex: 1;
+}
+
+.row__cont {
+    flex: 2;
+}

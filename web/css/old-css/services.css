@@ -1,0 +1,93 @@
+/**** Плитка ****/
+
+.info-block {
+    display: flex;
+    -moz-display: flex;
+    -webkit-display: flex;
+    min-height: 12rem;
+    position: relative;
+    margin-bottom: 2em;
+}
+
+.info-block__filter {
+    height: 100%;
+    position: absolute;
+    background-color: rgba(113, 65, 48, .8);
+    transition: all 150ms ease-out;
+}
+
+.info-block__filter:hover {
+    background-color: rgba(245, 91, 5, .8);
+}
+
+.info-block__content {
+    height: 100%;
+    display: flex;
+    -moz-display: flex;
+    -webkit-display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.info-block__content > .more-link {
+    align-self: flex-start;
+}
+
+.info-block__content > .more-link:hover {
+    color: #FFF;
+}
+
+
+
+
+/**** Профиль ****/
+
+.services__under-header {
+    display: flex;
+    height: 100%;
+}
+
+.services__under-header > div {
+    width: 50%;
+    height: 100%;
+}
+
+.under-header__left {
+    margin-right: 1.8em;
+}
+
+.left__slider {
+    height: 100%;
+}
+
+.right__info {
+    display: flex;
+}
+
+.right__info > div {
+    flex: 1;
+}
+
+.left__position,
+.right__position {
+    margin-bottom: 2.3em;
+}
+
+.position__name {
+    margin-bottom: .8em;
+    font-size: .9rem;
+    color: #5b4132;
+}
+
+.position__desc {
+    font-size: .83rem;
+    color: #b3b3b3;
+}
+
+.position__desc .btn-group a span {
+    color: #b3b3b3;
+}
+
+.position__desc .btn-group a svg {
+    fill: #b3b3b3;
+}
