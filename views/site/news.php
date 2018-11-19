@@ -14,7 +14,6 @@ $this->registerJsFile('@web/js/menu.js',['depends' =>'app\assets\ApppAsset']);
 
 // Календарь
 $this->registerJsFile('@web/js/jquery.calendario.js',['depends' =>'app\assets\ApppAsset']);
-$this->registerJsFile('@web/js/data.js',['depends' =>'app\assets\ApppAsset']);
 $this->registerJsFile('@web/js/modernizr.custom.63321.js',['depends' =>'app\assets\ApppAsset']);
 
 $this->registerCssFile('@web/css/calendar.css',['depends' =>'app\assets\ApppAsset']);
@@ -35,7 +34,9 @@ $this->title = 'Новости и события';
                 </div>
             </div>
         </div>
+
         <script>
+            //отметки на календаре
             var codropsEvents = {
             <?php foreach ($news as $item): ?>
 
