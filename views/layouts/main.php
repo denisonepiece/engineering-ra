@@ -9,7 +9,7 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\ApppAsset;
-
+$this->registerJsFile('@web/js/modal.js',['depends' =>'app\assets\ApppAsset']);
 ApppAsset::register($this);
 $this->registerMetaTag(['name' => 'description', 'content' => 'Государственная поддержка модернизации малого и среднего предпринимательства 
 в Республике Алтай']);
@@ -116,6 +116,8 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => 'республика
         <?php
     }
     ?>
+   
+        <a href="#modal2" class="services-wiget open_modal">Консультрование и услуги</a>
         <footer>
           <div class="container-fluid">
               <div class="row">

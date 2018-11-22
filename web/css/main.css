@@ -1523,3 +1523,117 @@ h1.header-mainSlider {
     margin-bottom: 3em;
   }
 }
+
+
+
+.services-wiget {
+    position: fixed;
+    background-color: red;
+    bottom: 2%;
+    right: 2%;
+    z-index: 9999;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*** Модальное окно ***/
+
+.modal_div {
+    z-index: 9990;
+    position: fixed;
+    background-color: #FFF;
+    width: 100%;
+    height: 100%;
+
+    display: -webkit-flex;
+    display: -webkit-box;
+    display: -moz-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -ms-flex;
+    display: -o-flex;    
+    display: flex;
+
+    justify-content: center;
+    transition: all 150ms ease-out;
+    left: -100%;
+}
+
+.modal-container__modal-dialog {
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;    
+    align-self: center;
+
+    display: -webkit-flex;
+    display: -webkit-box;
+    display: -moz-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -ms-flex;
+    display: -o-flex;  
+    display: flex;
+
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+
+.modal-dialog__modal-header {
+    padding-top: 1em;
+    padding-bottom: 3em;
+    display: -webkit-flex;
+    display: -webkit-box;
+    display: -moz-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -ms-flex;
+    display: -o-flex;     
+    display: flex;
+
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+}
+
+
+.modal_div .modal_close {
+    cursor: pointer;
+    position: absolute;
+    top: 4%;
+    right: 6%;
+}
+
+.modal_div .modal_close svg {
+    fill: #5b4132;
+    height: 1.8em;
+}
+
+.modal_div .modal_close svg:hover {
+    fill: #f55b05;
+}
+
+.modal-dialog__modal-body {
+    margin-bottom: 1em;
+}
