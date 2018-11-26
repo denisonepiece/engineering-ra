@@ -1,12 +1,8 @@
 <?php
-/* @var $this \yii\web\View */
-/* @var $content string */
-use app\widgets\Alert;
+
 use yii\helpers\Html;
-use yii\bootstrap\Nav;
-use yii\bootstrap\NavBar;
-use yii\widgets\Breadcrumbs;
 use app\assets\ApppAsset;
+
 $this->registerJsFile('@web/js/modal.js',['depends' =>'app\assets\ApppAsset']);
 ApppAsset::register($this);
 $this->registerMetaTag(['name' => 'description', 'content' => 'Государственная поддержка модернизации малого и среднего предпринимательства
@@ -31,126 +27,11 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => 'республика
     <?php $this->head() ?>
   </head>
   <body>
-    <!-- Модальное окно из виджета START -->
-    <div class="modal_div" id="modal2">
-      <div class="modal-container__modal-dialog">
-        <div class="modal-dialog__modal-header">
-          <!-- Кнопка закрытия. Чтобы закрыть верни modal-visible из родителя -->
-          <a class="modal_close">
-            <svg viewBox="0 0 64 64"><g><path d="M28.941,31.786L0.613,60.114c-0.787,0.787-0.787,2.062,0,2.849c0.393,0.394,0.909,0.59,1.424,0.59 c0.516,0,1.031-0.196,1.424-0.59l28.541-28.541l28.541,28.541c0.394,0.394,0.909,0.59,1.424,0.59c0.515,0,1.031-0.196,1.424-0.59 c0.787-0.787,0.787-2.062,0-2.849L35.064,31.786L63.41,3.438c0.787-0.787,0.787-2.062,0-2.849c-0.787-0.786-2.062-0.786-2.848,0 L32.003,29.15L3.441,0.59c-0.787-0.786-2.061-0.786-2.848,0c-0.787,0.787-0.787,2.062,0,2.849L28.941,31.786z"/></g></svg>
-          </a>
-          <h1 class="header-block">Что Вам требуется?</h1>
-        </div>
-        <div class="modal-dialog__modal-body">
-          <div class="btn-group btmM">
-            <a href="#modal3" class="btn one-btn open_modal btn-maxW">Проконсультрироваться</a>
-          </div>
-          <div class="btn-group">
-            <a href="#modal4" class="btn one-btn open_modal btn-maxW">Получить услугу</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div id="overlay"></div>
-    <!-- Модальное окно END -->
-    <!-- Модальное окно из виджета КОНСУЛЬТАЦИЯ START -->
-    <div class="modal_div scroll" id="modal3">
-      <div class="modal-container__modal-dialog scroll">
-        <div class="modal-dialog__modal-header">
-          <!-- Кнопка закрытия. Чтобы закрыть верни modal-visible из родителя -->
-          <a class="modal_close">
-            <svg viewBox="0 0 64 64"><g><path d="M28.941,31.786L0.613,60.114c-0.787,0.787-0.787,2.062,0,2.849c0.393,0.394,0.909,0.59,1.424,0.59 c0.516,0,1.031-0.196,1.424-0.59l28.541-28.541l28.541,28.541c0.394,0.394,0.909,0.59,1.424,0.59c0.515,0,1.031-0.196,1.424-0.59 c0.787-0.787,0.787-2.062,0-2.849L35.064,31.786L63.41,3.438c0.787-0.787,0.787-2.062,0-2.849c-0.787-0.786-2.062-0.786-2.848,0 L32.003,29.15L3.441,0.59c-0.787-0.786-2.061-0.786-2.848,0c-0.787,0.787-0.787,2.062,0,2.849L28.941,31.786z"/></g></svg>
-          </a>
-          <h1 class="header-block">Получение консультации</h1>
-        </div>
-        <div class="modal-dialog__modal-body">
-          <form id="" class="stock-form form-horizontal" action="" method="post">
-            <div class="form-group field-contactform-name required">
-              <label class="control-label input_description" for="">ФИО</label>
-              <input type="text" id="" class="form-control" name="" required/>
-              <p class="help-block help-block-error"></p>
-            </div>
-            <div class="form-group field-contactform-tel required">
-              <label class="control-label input_description" for="">Как с Вами связаться?</label>
-              <input type="text" id="contactform-tel" class="form-control" name=""/ placeholder="Телефон, e-mail" required>
-              <p class="help-block help-block-error "></p>
-            </div>
-            <div class="form-group field-contactform-name required">
-              <label class="control-label input_description" for="">Данные организации</label>
-              <input type="text" id="" class="form-control" name="" placeholder="Наименование или ИНН" />
-              <p class="help-block help-block-error"></p>
-            </div>
-            <div class="form-group field-contactform-name required">
-              <label class="control-label input_description" for="">Тема обращения</label>
-              <input type="text" id="" class="form-control" name=""/>
-              <p class="help-block help-block-error"></p>
-            </div>
-            <div class="form-group field-contactform-name required">
-              <label class="control-label input_description" for="">Текст обращения</label>
-              <textarea name="" id="" cols="30" rows="10" required></textarea>
-              <p class="help-block help-block-error"></p>
-            </div>
-            <div class="form-group">
-              <button type="submit" class="btn one-btn" name="">Подать заявку</button>
-            </div>
-            <div class="msg-forForm">
-              Нажимая кнопку «Подать заявку», я соглашаюсь с
-              <a href="http://engineering-ra.ru/web/politic.pdf" target="_blank" class="more-link">правилами передачи и обработки персональных данных</a>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-    <div id="overlay"></div>
-    <!-- Модальное окно END -->
-    <!-- Модальное окно из виджета УСЛУГА START -->
-    <div class="modal_div scroll" id="modal4">
-      <div class="modal-container__modal-dialog scroll">
-        <div class="modal-dialog__modal-header">
-          <a class="modal_close">
-            <svg viewBox="0 0 64 64"><g><path d="M28.941,31.786L0.613,60.114c-0.787,0.787-0.787,2.062,0,2.849c0.393,0.394,0.909,0.59,1.424,0.59 c0.516,0,1.031-0.196,1.424-0.59l28.541-28.541l28.541,28.541c0.394,0.394,0.909,0.59,1.424,0.59c0.515,0,1.031-0.196,1.424-0.59 c0.787-0.787,0.787-2.062,0-2.849L35.064,31.786L63.41,3.438c0.787-0.787,0.787-2.062,0-2.849c-0.787-0.786-2.062-0.786-2.848,0 L32.003,29.15L3.441,0.59c-0.787-0.786-2.061-0.786-2.848,0c-0.787,0.787-0.787,2.062,0,2.849L28.941,31.786z"/></g></svg>
-          </a>
-          <h1 class="header-block">Заявка на услугу</h1>
-        </div>
-        <div class="modal-dialog__modal-body">
-          <form id="" class="stock-form form-horizontal" action="" method="post">
-            <div class="form-group field-contactform-name required">
-              <label class="control-label input_description" for="">ФИО</label>
-              <input type="text" id="" class="form-control" name="" required/>
-              <p class="help-block help-block-error"></p>
-            </div>
-            <div class="form-group field-contactform-tel required">
-              <label class="control-label input_description" for="">Как с Вами связаться?</label>
-              <input type="text" id="contactform-tel" class="form-control" name=""/ placeholder="Телефон, e-mail" required>
-              <p class="help-block help-block-error "></p>
-            </div>
-            <div class="form-group field-contactform-name required">
-              <label class="control-label input_description" for="">Данные организации</label>
-              <input type="text" id="" class="form-control" name="" placeholder="Наименование или ИНН" />
-              <p class="help-block help-block-error"></p>
-            </div>
-            <div class="form-group field-contactform-name required">
-              <label class="control-label input_description" for="">Что требуется?</label>
-              <textarea name="" id="" cols="30" rows="10" required placeholder="Опишите задачу"></textarea>
-              <p class="help-block help-block-error"></p>
-            </div>
-            <div class="form-group">
-              <button type="submit" class="btn one-btn" name="">Подать заявку</button>
-            </div>
-            <div class="msg-forForm">
-              <a href="#" target="_blank" class="more-link">Регламенты оказания услуг РЦИ РА</a>
-            </div>
-            <div class="msg-forForm">
-              Нажимая кнопку «Подать заявку», я соглашаюсь с
-              <a href="http://engineering-ra.ru/web/politic.pdf" target="_blank" class="more-link">правилами передачи и обработки персональных данных</a>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-    <div id="overlay"></div>
-    <!-- Модальное окно END -->
-    
+
+<!--  Виджет лежит в папке components/views -->
+    <?= \app\components\ModalWidget::widget(); ?>
+<!--    /Виджет -->
+
     <?php $this->beginBody() ?>
     <div class="wrapper">
       <header>

@@ -2,22 +2,22 @@
 
 use yii\widgets\LinkPager;
 
-$this->registerCssFile('@web/css/flexboxgrid.css',['depends' =>'app\assets\ApppAsset']);
-$this->registerCssFile('@web/css/main.css',['depends' =>'app\assets\ApppAsset']);
-$this->registerCssFile('@web/css/custom-elem.css',['depends' =>'app\assets\ApppAsset']);
-$this->registerCssFile('@web/css/news.css',['depends' =>'app\assets\ApppAsset']);
-$this->registerJsFile('@web/js/news-filter.js',['depends' =>'app\assets\ApppAsset']);
+$this->registerCssFile('@web/css/flexboxgrid.css', ['depends' => 'app\assets\ApppAsset']);
+$this->registerCssFile('@web/css/main.css', ['depends' => 'app\assets\ApppAsset']);
+$this->registerCssFile('@web/css/custom-elem.css', ['depends' => 'app\assets\ApppAsset']);
+$this->registerCssFile('@web/css/news.css', ['depends' => 'app\assets\ApppAsset']);
+$this->registerJsFile('@web/js/news-filter.js', ['depends' => 'app\assets\ApppAsset']);
 
-$this->registerCssFile('@web/css/notification.css',['depends' =>'app\assets\ApppAsset']);
-$this->registerJsFile('@web/js/notification.js',['depends' =>'app\assets\ApppAsset']);
-$this->registerJsFile('@web/js/menu.js',['depends' =>'app\assets\ApppAsset']);
+$this->registerCssFile('@web/css/notification.css', ['depends' => 'app\assets\ApppAsset']);
+$this->registerJsFile('@web/js/notification.js', ['depends' => 'app\assets\ApppAsset']);
+$this->registerJsFile('@web/js/menu.js', ['depends' => 'app\assets\ApppAsset']);
 
 // Календарь
-$this->registerJsFile('@web/js/jquery.calendario.js',['depends' =>'app\assets\ApppAsset']);
-$this->registerJsFile('@web/js/modernizr.custom.63321.js',['depends' =>'app\assets\ApppAsset']);
+$this->registerJsFile('@web/js/jquery.calendario.js', ['depends' => 'app\assets\ApppAsset']);
+$this->registerJsFile('@web/js/modernizr.custom.63321.js', ['depends' => 'app\assets\ApppAsset']);
 
-$this->registerCssFile('@web/css/calendar.css',['depends' =>'app\assets\ApppAsset']);
-$this->registerCssFile('@web/css/custom_2.css',['depends' =>'app\assets\ApppAsset']);
+$this->registerCssFile('@web/css/calendar.css', ['depends' => 'app\assets\ApppAsset']);
+$this->registerCssFile('@web/css/custom_2.css', ['depends' => 'app\assets\ApppAsset']);
 
 
 $this->title = 'Новости и события';
@@ -35,14 +35,15 @@ $this->title = 'Новости и события';
             </div>
         </div>
 
+        <!--        Календарь-->
         <script>
             //отметки на календаре
             var codropsEvents = {
-            <?php foreach ($news as $item): ?>
+                <?php foreach ($news as $item): ?>
 
-                '<?= date('m-d-Y' , strtotime($item->date)); ?>' : '<?= $item->title ?>',
+                '<?= date('m-d-Y', strtotime($item->date)); ?>': '<?= $item->title ?>',
 
-            <?php endforeach; ?>
+                <?php endforeach; ?>
             };
         </script>
         <div class="container">
@@ -60,6 +61,8 @@ $this->title = 'Новости и события';
                 </div>
             </div>
         </div>
+        <!--        /Календарь -->
+
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
@@ -71,19 +74,19 @@ $this->title = 'Новости и события';
                             <div class="left__function-block">
                                 <div>
                                     <input id="radio-1" class="radio-custom" name="radio-group" type="radio" <?php
-                                    if (Yii::$app->request->get('type')==2 || !Yii::$app->request->get('type')){
+                                    if (Yii::$app->request->get('type') == 2 || !Yii::$app->request->get('type')){
                                     ?>checked <?php } ?> value="2">
                                     <label for="radio-1" class="radio-custom-label">Все</label>
                                 </div>
                                 <div>
                                     <input id="radio-2" class="radio-custom" name="radio-group" type="radio" <?php
-                                    if (Yii::$app->request->get('type')==0){
+                                    if (Yii::$app->request->get('type') == 0){
                                     ?>checked <?php } ?> value="0">
                                     <label for="radio-2" class="radio-custom-label">Новости</label>
                                 </div>
                                 <div>
                                     <input id="radio-3" class="radio-custom" name="radio-group" type="radio" <?php
-                                    if (Yii::$app->request->get('type')==1){
+                                    if (Yii::$app->request->get('type') == 1){
                                     ?>checked <?php } ?> value="1">
                                     <label for="radio-3" class="radio-custom-label">События</label>
                                 </div>
@@ -96,13 +99,13 @@ $this->title = 'Новости и события';
                             <div class="right__function-block">
                                 <div>
                                     <span>от</span>
-                                    <select  class="custom-select">
+                                    <select class="custom-select">
                                         <?php
                                         foreach ($date as $item) {
                                             ?>
                                             <option name="to" <?php
-                                            if ($item==Yii::$app->request->get('date_to')){
-                                            ?>selected<?php }  ?>><?= $item?></option>
+                                            if ($item == Yii::$app->request->get('date_to')){
+                                            ?>selected<?php } ?>><?= $item ?></option>
                                             <?php
                                         }
                                         ?>
@@ -116,8 +119,8 @@ $this->title = 'Новости и события';
                                         foreach ($date as $item) {
                                             ?>
                                             <option name="do" <?php
-                                            if ($item==Yii::$app->request->get('date_do')){
-                                            ?>selected<?php }  ?>><?= $item?></option>
+                                            if ($item == Yii::$app->request->get('date_do')){
+                                            ?>selected<?php } ?>><?= $item ?></option>
                                             <?php
                                         }
                                         ?>
@@ -139,20 +142,21 @@ $this->title = 'Новости и события';
                             <div class="news-block rule-padd-lr">
                                 <div class="news-block__header">
                                     <div class="header__publ-type"><?php
-                                        if ($item->event==0){
+                                        if ($item->event == 0) {
                                             echo "Новость";
-                                        }else{
+                                        } else {
                                             echo "Событие";
                                         }
                                         ?></div>
-                                    <h3 class="header-block"><?= mb_substr(strip_tags($item->title), 0, 70).'...'?></h3>
+                                    <h3 class="header-block"><?= mb_substr(strip_tags($item->title), 0, 70) . '...' ?></h3>
                                 </div>
                                 <div class="news-block__anons base-text">
-                                    <?= mb_substr(strip_tags($item->content), 0, 100).'...'?>
+                                    <?= mb_substr(strip_tags($item->content), 0, 100) . '...' ?>
                                 </div>
                                 <div class="news-block__footer">
-                                    <a href="<?=\yii\helpers\Url::to(['/site/newsfull/','id'=>$item->id])?>" class="more-link">Подробнее</a>
-                                    <span class="footer__news-date"><?=date("d.m.Y", strtotime($item->date))?></span>
+                                    <a href="<?= \yii\helpers\Url::to(['/site/newsfull/', 'id' => $item->id]) ?>"
+                                       class="more-link">Подробнее</a>
+                                    <span class="footer__news-date"><?= date("d.m.Y", strtotime($item->date)) ?></span>
                                 </div>
                             </div>
                         </div>
@@ -203,66 +207,69 @@ $this->title = 'Новости и события';
 </main>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script type="text/javascript">
-    $(function() {
+    $(function () {
 
         var transEndEventNames = {
-                'WebkitTransition' : 'webkitTransitionEnd',
-                'MozTransition' : 'transitionend',
-                'OTransition' : 'oTransitionEnd',
-                'msTransition' : 'MSTransitionEnd',
-                'transition' : 'transitionend'
+                'WebkitTransition': 'webkitTransitionEnd',
+                'MozTransition': 'transitionend',
+                'OTransition': 'oTransitionEnd',
+                'msTransition': 'MSTransitionEnd',
+                'transition': 'transitionend'
             },
-            transEndEventName = transEndEventNames[ Modernizr.prefixed( 'transition' ) ],
-            $wrapper = $( '#custom-inner' ),
-            $calendar = $( '#calendar' ),
-            cal = $calendar.calendario( {
-                onDayClick : function( $el, $contentEl, dateProperties ) {
+            transEndEventName = transEndEventNames[Modernizr.prefixed('transition')],
+            $wrapper = $('#custom-inner'),
+            $calendar = $('#calendar'),
+            cal = $calendar.calendario({
+                onDayClick: function ($el, $contentEl, dateProperties) {
 
-                    if( $contentEl.length > 0 ) {
-                        showEvents( $contentEl, dateProperties );
+                    if ($contentEl.length > 0) {
+                        showEvents($contentEl, dateProperties);
                     }
 
                 },
-                caldata : codropsEvents,
-                displayWeekAbbr : true
-            } ),
-            $month = $( '#custom-month' ).html( cal.getMonthName() ),
-            $year = $( '#custom-year' ).html( cal.getYear() );
+                caldata: codropsEvents,
+                displayWeekAbbr: true
+            }),
+            $month = $('#custom-month').html(cal.getMonthName()),
+            $year = $('#custom-year').html(cal.getYear());
 
-        $( '#custom-next' ).on( 'click', function() {
-            cal.gotoNextMonth( updateMonthYear );
-        } );
-        $( '#custom-prev' ).on( 'click', function() {
-            cal.gotoPreviousMonth( updateMonthYear );
-        } );
+        $('#custom-next').on('click', function () {
+            cal.gotoNextMonth(updateMonthYear);
+        });
+        $('#custom-prev').on('click', function () {
+            cal.gotoPreviousMonth(updateMonthYear);
+        });
 
         function updateMonthYear() {
-            $month.html( cal.getMonthName() );
-            $year.html( cal.getYear() );
+            $month.html(cal.getMonthName());
+            $year.html(cal.getYear());
         }
 
         // just an example..
-        function showEvents( $contentEl, dateProperties ) {
+        function showEvents($contentEl, dateProperties) {
 
             hideEvents();
 
-            var $events = $( '<div id="custom-content-reveal" class="custom-content-reveal"><h4>События на ' + dateProperties.monthname + ' ' + dateProperties.day + ', ' + dateProperties.year + '</h4></div>' ),
-                $close = $( '<span class="custom-content-close"></span>' ).on( 'click', hideEvents );
+            var $events = $('<div id="custom-content-reveal" class="custom-content-reveal"><h4>События на ' + dateProperties.monthname + ' ' + dateProperties.day + ', ' + dateProperties.year + '</h4></div>'),
+                $close = $('<span class="custom-content-close"></span>').on('click', hideEvents);
 
-            $events.append( $contentEl.html() , $close ).insertAfter( $wrapper );
+            $events.append($contentEl.html(), $close).insertAfter($wrapper);
 
-            setTimeout( function() {
-                $events.css( 'top', '0%' );
-            }, 25 );
+            setTimeout(function () {
+                $events.css('top', '0%');
+            }, 25);
 
         }
+
         function hideEvents() {
 
-            var $events = $( '#custom-content-reveal' );
-            if( $events.length > 0 ) {
+            var $events = $('#custom-content-reveal');
+            if ($events.length > 0) {
 
-                $events.css( 'top', '100%' );
-                Modernizr.csstransitions ? $events.on( transEndEventName, function() { $( this ).remove(); } ) : $events.remove();
+                $events.css('top', '100%');
+                Modernizr.csstransitions ? $events.on(transEndEventName, function () {
+                    $(this).remove();
+                }) : $events.remove();
 
             }
 
