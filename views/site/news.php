@@ -246,7 +246,7 @@ $this->title = 'Новости и события';
 
             hideEvents();
 
-            var $events = $( '<div id="custom-content-reveal" class="custom-content-reveal"><h4>Events for ' + dateProperties.monthname + ' ' + dateProperties.day + ', ' + dateProperties.year + '</h4></div>' ),
+            var $events = $( '<div id="custom-content-reveal" class="custom-content-reveal"><h4>События на ' + dateProperties.monthname + ' ' + dateProperties.day + ', ' + dateProperties.year + '</h4></div>' ),
                 $close = $( '<span class="custom-content-close"></span>' ).on( 'click', hideEvents );
 
             $events.append( $contentEl.html() , $close ).insertAfter( $wrapper );
