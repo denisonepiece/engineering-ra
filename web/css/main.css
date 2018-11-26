@@ -499,6 +499,10 @@ h1.header-mainSlider {
     color: #f55b05;
 }
 
+.btn-maxW {
+    width: 100%;
+}
+
 .btn-group {
     display: -webkit-flex;
     display: -webkit-box;
@@ -508,6 +512,10 @@ h1.header-mainSlider {
     display: -ms-flex;
     display: -o-flex;    
     display: flex;
+}
+
+.btn-group.btmM {
+    margin-bottom: 1rem;
 }
 
 .one-btn {
@@ -1484,6 +1492,24 @@ h1.header-mainSlider {
     border: solid #f55b05 1px;
 }
 
+textarea {
+    resize: none;
+    font-family: 'RobotoRegular';
+    padding: .7em;
+    outline: none;
+    border: solid #5b4132 1px;
+}
+
+.stock-form > div > input::placeholder {
+    font-size: .8rem;
+    color: #b3b3b3;
+}
+
+.stock-form > div > textarea:focus {
+    border: solid #f55b05 1px;
+}
+
+
 .modal-dialog__modal-body .one-btn {
     align-self: flex-start;
 }
@@ -1492,6 +1518,12 @@ h1.header-mainSlider {
 .msg-forForm {
     margin-top: 2em;
     font-size: .8rem;
+}
+
+
+.msg-forForm.vererse {
+    margin-top: 0;
+    margin-bottom: 4em;
 }
 
 .msg-forForm a{
@@ -1523,4 +1555,116 @@ h1.header-mainSlider {
   .contacts__info-block {
     margin-bottom: 3em;
   }
+}
+
+
+.services-wiget {
+    position: fixed;
+    background-color: #f55b05;
+    bottom: 0;
+    right: 2%;
+    z-index: 9998;
+    cursor: pointer;
+    color: #FFF;
+   font-size: .9rem;    
+    padding: .6em 1.7em;
+   transition: all 60ms ease-out;
+
+}
+
+
+.services-wiget:active {
+    background-color: #f48047;
+    -webkit-transform: translateY(.4em);
+    transform: translateY(.4em);    
+}
+
+.services-wiget:hover {
+    background-color: #ff640e;
+}
+
+/*** Модальные окна ***/
+
+.modal_div {
+    z-index: 9999;
+    position: fixed;
+    background-color: #FFF;
+    width: 100%;
+    height: 100%;
+
+    display: -webkit-flex;
+    display: -webkit-box;
+    display: -moz-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -ms-flex;
+    display: -o-flex;    
+    display: flex;
+
+    justify-content: center;
+    transition: all 150ms ease-out;
+    left: -100%;
+}
+
+.modal_div.scroll {
+    overflow-y: scroll;
+    display: block;  
+}
+
+.modal-container__modal-dialog {
+    box-sizing: border-box;
+}
+
+.modal-container__modal-dialog.scroll {
+    width: 28%;
+    margin: 0 auto;
+}
+
+
+
+.modal-dialog__modal-header {
+    padding-top: 1em;
+    padding-bottom: 3em;
+    display: -webkit-flex;
+    display: -webkit-box;
+    display: -moz-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -ms-flex;
+    display: -o-flex;     
+    display: flex;
+
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+
+.modal_div .modal_close {
+    cursor: pointer;
+    position: absolute;
+    top: 4%;
+    right: 6%;
+}
+
+.modal_div .modal_close svg {
+    fill: #5b4132;
+    height: 1.8em;
+}
+
+.modal_div .modal_close svg:hover {
+    fill: #f55b05;
+}
+
+.modal-dialog__modal-body {
+    margin-bottom: 1em;
+}
+
+@media screen and (max-width: 979px) {
+    .modal-container__modal-dialog.scroll {
+        width: 100%;
+        padding: 1rem 1rem;
+    }    
 }
