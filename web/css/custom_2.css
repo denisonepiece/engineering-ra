@@ -1,10 +1,11 @@
 /* Custom calendar elements */
 
 .custom-calendar-wrap {
-	margin: 10px auto;
+	width: 50vw;
 	position: relative;
 	overflow: hidden;
 }
+
 
 .custom-inner {
 	background: #fff;
@@ -48,7 +49,7 @@
 }
 
 .custom-header h2 {
-	color: #495468;
+	color: #5b4132;
 	font-weight: 300;
 	font-size: 18px;
 	margin-top: 10px;
@@ -179,11 +180,11 @@
 /* Modifications */
 
 .fc-calendar-container {
-	height: 400px;
+	/*height: 400px;*/
 	width: auto;
 	padding: 30px;
 	background: #f6f6f6;
-	box-shadow: inset 0 1px rgba(255,255,255,0.8);
+	/*box-shadow: inset 0 1px rgba(255,255,255,0.8);*/
 }
 
 .fc-calendar .fc-head {
@@ -254,9 +255,27 @@
 	font-size: 22px;
 }
 
+
+@media screen and (max-width: 796px) {
+
+	.custom-calendar-wrap {
+		width: 85vw;
+	}
+
+	.fc-calendar-container {
+		padding: 0;
+	}
+
+	.custom-header nav span {
+		font-size: 30px;
+	}
+}
+
 @media screen and (max-width: 400px) {
+
 	.fc-calendar-container {
 		height: 300px;
+		background: transparent;
 	}
 	.fc-calendar .fc-row > div > span.fc-date {
 		font-size: 15px;
