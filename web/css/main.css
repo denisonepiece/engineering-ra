@@ -86,7 +86,6 @@ body {
     height: 100%;
 }
 
-
 .content-container {
     -webkit-box-flex: 1;
     -webkit-flex: 1 0 auto;
@@ -335,8 +334,6 @@ footer {
         display: block;
         font-size: 1.1rem;
       }
-
-
 }
 
 /***** Глобальные свойства *****/
@@ -492,11 +489,53 @@ h1.header-mainSlider {
     text-decoration: underline;
     color: #5b4132;
     font-size: .9rem;
-    transition: all 150ms ease-out;
+    transition: all 150ms ease-out;   
 }
 
-.more-link:hover {
+.more-link span, svg {
+    transition: all 150ms ease-out;    
+}
+
+.more-link svg {
+    width: 1.188rem; 
+    margin-right: .4rem; 
+    vertical-align: middle;
+}
+
+.more-link span {
+    vertical-align: middle;
+}
+
+.more-link:hover svg, 
+.more-link:hover span,
+.more-link:hover{
+    fill: #f55b05;
     color: #f55b05;
+}
+
+.more-link.v2 {
+    text-decoration: none;
+}
+
+.togIndicator {
+    position: relative;   
+}
+
+.indicator {
+    background-color: #f55b05;
+    border-radius: 100%;
+    font-size: 0.7rem;
+    width: 1.4em;
+    height: 1.4em;
+    padding: .5em;
+    color: #FFF;
+    box-sizing: border-box;
+    position: absolute;
+    right: -7.5%;
+    top: -15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .btn-maxW {
@@ -1357,100 +1396,6 @@ h1.header-mainSlider {
 /*** Интро-блок после меню (главная)***/
 
 
-
-/*** Модальное окно ***/
-
-.modal-container {
-    z-index: 9990;
-    position: absolute;
-    background-color: #FFF;
-    width: 100%;
-    height: 100%;
-
-    display: -webkit-flex;
-    display: -webkit-box;
-    display: -moz-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -ms-flex;
-    display: -o-flex;    
-    display: flex;
-
-    justify-content: center;
-    transition: all 150ms ease-out;
-    left: -100%;
-}
-
-.modal-container__modal-dialog {
-    -webkit-align-self: center;
-    -ms-flex-item-align: center;    
-    align-self: center;
-
-    display: -webkit-flex;
-    display: -webkit-box;
-    display: -moz-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -ms-flex;
-    display: -o-flex;  
-    display: flex;
-
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-}
-
-
-.modal-dialog__modal-header {
-    padding-top: 1em;
-    padding-bottom: 3em;
-    display: -webkit-flex;
-    display: -webkit-box;
-    display: -moz-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -ms-flex;
-    display: -o-flex;     
-    display: flex;
-
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-
-}
-
-.modal-header__close-btn {
-    cursor: pointer;
-    position: absolute;
-    top: 4%;
-    right: 6%;
-}
-
-.modal-header__close-btn svg {
-    fill: #5b4132;
-    height: 1.8em;
-}
-
-.modal-header__close-btn svg:hover {
-    fill: #f55b05;
-}
-
-.modal-dialog__modal-body {
-    margin-bottom: 1em;
-}
-
-
-/* Открываем окно */
-
-.modal-visible {
-    left: 0;
-}
-
-
 /*** Форма ***/
 
 .stock-form > div {
@@ -1612,14 +1557,30 @@ textarea {
 
 .modal-container__modal-dialog {
     box-sizing: border-box;
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;    
+    align-self: center;
+
+    display: -webkit-flex;
+    display: -webkit-box;
+    display: -moz-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -ms-flex;
+    display: -o-flex;  
+    display: flex;
+
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;    
 }
 
 .modal-container__modal-dialog.scroll {
     width: 28%;
     margin: 0 auto;
 }
-
-
 
 .modal-dialog__modal-header {
     padding-top: 1em;
@@ -1667,3 +1628,6 @@ textarea {
         padding: 1rem 1rem;
     }    
 }
+
+
+
