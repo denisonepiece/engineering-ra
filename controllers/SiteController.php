@@ -9,6 +9,7 @@ use app\models\Doc;
 use app\models\FieldOfActivity;
 use app\models\Materials;
 use app\models\News;
+use app\models\Page;
 use app\models\Section;
 use app\models\Services;
 use app\models\Slider;
@@ -17,7 +18,6 @@ use app\models\Sliderservices;
 use app\models\Team;
 use app\models\TypeCompany;
 use Yii;
-use yii\data\Pagination;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\Response;
@@ -268,5 +268,15 @@ class SiteController extends Controller
             return true;
         }
 
+    }
+
+//    Новые страницы
+    public function actionPage($id) {
+
+        $page = Page::find()->where(['id' => $id])->one();
+
+        return $this->render('page', [
+            'page' => $page,
+        ]);
     }
 }

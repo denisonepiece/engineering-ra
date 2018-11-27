@@ -43,6 +43,7 @@ AppAsset::register($this);
             ['label' => 'Слайдер', 'url' => ['/admin/slidermain']],
             ['label' => 'Услуги', 'url' => ['/admin/services']],
             ['label' => 'Материалы', 'url' => ['/admin/materials']],
+            ['label' => 'Текстовые страницы', 'url' => ['/admin/page']],
             ['label' => 'Команда', 'url' => ['/admin/team']],
             ['label' => 'О центре', 'url' => ['/admin/about/update?id=1']],
             ['label' => 'Контакты', 'url' => ['/admin/contacts/update?id=1']],

@@ -1,10 +1,10 @@
 <?php
-$this->registerCssFile('@web/css/flexboxgrid.css',['depends' =>'app\assets\ApppAsset']);
-$this->registerCssFile('@web/css/main.css',['depends' =>'app\assets\ApppAsset']);
-$this->registerJsFile('@web/js/tabs.js',['depends' =>'app\assets\ApppAsset']);
-$this->registerCssFile('@web/css/notification.css',['depends' =>'app\assets\ApppAsset']);
-$this->registerJsFile('@web/js/notification.js',['depends' =>'app\assets\ApppAsset']);
-$this->registerJsFile('@web/js/menu.js',['depends' =>'app\assets\ApppAsset']);
+$this->registerCssFile('@web/css/flexboxgrid.css', ['depends' => 'app\assets\ApppAsset']);
+$this->registerCssFile('@web/css/main.css', ['depends' => 'app\assets\ApppAsset']);
+$this->registerJsFile('@web/js/tabs.js', ['depends' => 'app\assets\ApppAsset']);
+$this->registerCssFile('@web/css/notification.css', ['depends' => 'app\assets\ApppAsset']);
+$this->registerJsFile('@web/js/notification.js', ['depends' => 'app\assets\ApppAsset']);
+$this->registerJsFile('@web/js/menu.js', ['depends' => 'app\assets\ApppAsset']);
 
 $this->title = 'Материалы и публикации';
 ?>
@@ -25,13 +25,14 @@ $this->title = 'Материалы и публикации';
                     <div class="tabs-line for-content-mb">
                         <!-- Классы логики табов отрефакторить! -->
                         <?php
-                        $i=0;
+                        $i = 0;
                         foreach ($doc as $value) {
                             ?>
                             <div class="btn-group tabs__controls-item <?php
-                            if ($i==0){
-                            ?>tabs__controls-link--active click<?php } ?>">
-                                <a href="#" class="btn tab-btn rule-padd-lr-tb tabs__controls-link"><?=$value->title?></a>
+                            if ($i == 0) {
+                                ?>tabs__controls-link--active click<?php } ?>">
+                                <a href="#"
+                                   class="btn tab-btn rule-padd-lr-tb tabs__controls-link"><?= $value->title ?></a>
                             </div>
                             <?php
                             $i++;
@@ -48,47 +49,49 @@ $this->title = 'Материалы и публикации';
                     <!-- Классы логики табов отрефакторить! -->
                     <div class="tabs__list">
                         <?php
-                        $a=1;
+                        $a = 1;
                         foreach ($doc as $value) {
-
-
                             ?>
-                            <div class="tabs__item <?php if($a==1){?>tabs__item--active<?php }?>">
+                            <div class="tabs__item <?php if ($a == 1) { ?>tabs__item--active<?php } ?>">
                                 <?php
                                 foreach ($section as $item) {
-                                    $i=0;
-                                    foreach ($materials as $mat){
-                                        if($mat->id_doc==$value->id && $mat->id_section == $item->id){
-                                            $i=1;
+                                    $i = 0;
+                                    foreach ($materials as $mat) {
+                                        if ($mat->id_doc == $value->id && $mat->id_section == $item->id) {
+                                            $i = 1;
                                             break;
                                         }
                                     }
                                     ?>
-                                    <div class="item__block rule-padd-tb-mini">
+                                    <!--                                    <div class="item__block rule-padd-tb-mini">-->
+                                    <div class="item__block">
+
                                         <?php
-                                        if ($i==1) {
+                                        if ($i == 1) {
                                             ?>
                                             <h3 class="header-block header-block--bmrg-under"><?= $item->title ?></h3>
                                             <?php
                                         }
                                         foreach ($materials as $material) {
-                                            if ($material->id_doc==$value->id && $material->id_section == $item->id) {
+                                            if ($material->id_doc == $value->id && $material->id_section == $item->id) {
                                                 ?>
                                                 <div class="btn-group">
                                                     <?php
-                                                    if (strpos($material->content,'http')){
+                                                    if (strpos($material->content, 'http') or strpos($material->content, 'engineering-ra')){
                                                     ?>
-                                                    <a href="<?=$material->content?>" class="btn decor-link" target="_blank" >
+                                                    <a href="<?= $material->content ?>" class="btn decor-link"
+                                                       target="_blank">
                                                         <?php
                                                         }else{
                                                         ?>
-                                                        <a href="<?=$material->content?>" class="btn decor-link" download target="_blank" >
+                                                        <a href="<?= $material->content ?>" class="btn decor-link"
+                                                           download target="_blank">
                                                             <?php
                                                             }
-                                                        ?>
-                                                        <svg viewBox="0 0 80 80">
-                                                            <g>
-                                                                <path d="M29.298,63.471l-4.048,4.02c-3.509,3.478-9.216,3.481-12.723,0
+                                                            ?>
+                                                            <svg viewBox="0 0 80 80">
+                                                                <g>
+                                                                    <path d="M29.298,63.471l-4.048,4.02c-3.509,3.478-9.216,3.481-12.723,0
                                                         c-1.686-1.673-2.612-3.895-2.612-6.257s0.927-4.585,2.611-6.258l14.9-14.783c3.088-3.062,8.897-7.571,13.131-3.372
                                                         c1.943,1.93,5.081,1.917,7.01-0.025c1.93-1.942,1.918-5.081-0.025-7.009c-7.197-7.142-17.834-5.822-27.098,3.37L5.543,47.941
                                                         C1.968,51.49,0,56.21,0,61.234s1.968,9.743,5.544,13.292C9.223,78.176,14.054,80,18.887,80c4.834,0,9.667-1.824,13.348-5.476
@@ -98,10 +101,10 @@ $this->title = 'Материалы и публикации';
                                                         c-7.269,7.212-10.679,3.827-12.134,2.383c-1.943-1.929-5.08-1.917-7.01,0.025s-1.918,5.081,0.025,7.009
                                                         c3.337,3.312,7.146,4.954,11.139,4.954c4.889,0,10.053-2.462,14.963-7.337l15.897-15.77C78.03,29.083,80,24.362,80,19.338
                                                         C80,14.316,78.03,9.595,74.454,6.044z"/>
-                                                            </g>
-                                                        </svg>
-                                                        <span><?= $material->title ?></span>
-                                                    </a>
+                                                                </g>
+                                                            </svg>
+                                                            <span><?= $material->title ?></span>
+                                                        </a>
                                                 </div>
                                                 <?php
                                             }
@@ -118,11 +121,8 @@ $this->title = 'Материалы и публикации';
                             $a++;
                         }
                         ?>
-
-
-
-
                         <!-- Классы логики табов отрефакторить! -->
+
                     </div>
                 </div>
             </div>
