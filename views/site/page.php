@@ -24,7 +24,11 @@ $this->title = $page->title;
         </div>
         <div class="container">
             <div class="row">
-                <?= $page->content ?>
+                <div class="col-lg-8 col-md-9 col-sm-12 col-xs-12">
+                    <div class="base-text">
+                        <?= $page->content ?>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
