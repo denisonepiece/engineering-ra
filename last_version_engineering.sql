@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 4.7.7
 -- https://www.phpmyadmin.net/
 --
--- Хост: localhost
--- Время создания: Ноя 19 2018 г., 09:29
--- Версия сервера: 5.6.32-78.0-log
--- Версия PHP: 5.6.37
+-- Хост: 127.0.0.1:3306
+-- Время создания: Ноя 27 2018 г., 11:26
+-- Версия сервера: 5.6.38
+-- Версия PHP: 7.0.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -17,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База данных: `vh236389_engineering`
+-- База данных: `engineering`
 --
 
 -- --------------------------------------------------------
@@ -40,6 +42,20 @@ CREATE TABLE `about` (
 
 INSERT INTO `about` (`id`, `title`, `content`, `titleabout`, `contantabout`) VALUES
 (1, 'О центре', 'Центры инжиниринга, проект Министерства экономического развития РФ, впервые появились в России в 2013 году. На начало 2015 года в 22 регионах страны региональные центры инжиниринга оказывают поддержку производственным малым и средним предприятиям. Центры инжиниринга помогают выявить «точки роста» предприятия, необходимые для дальнейшего развития производства. \r\n\r\nРегиональный центр инжиниринга в сфере биотехнологий (РЦИ) функционирует на базе Алтайского центра кластерного развития с 2014 года. Помимо специализации в области биотехнологий деятельность Центра направлена на поддержку субъектов малого и среднего предпринимательства (СМСП) Алтайского края в вопросах развития, модернизации и внедрения новых технологий, а также на предоставление инжиниринговых, организационно-технических, консультационных и маркетинговых услуг. \r\n\r\nОсновная цель РЦИ – повышение технологической готовности субъектов малого и среднего предпринимательства для реализации их инновационного потенциала и повышения конкурентоспособности.', 'Что такое инжиниринг?', 'Инжиниринг – это комплекс услуг предпроектного (предварительное исследование, технико-экономические обоснования), проектного (составления проектов, генплановых схем, рабочих чертежей и т.п.) и послепроектного (подготовка контрактных материалов, торгов, инспекция строительных работ и т.п.) характера, а также рекомендательные услуги по эксплуатации, управлению, реализации выпускаемой продукции.');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `brif`
+--
+
+CREATE TABLE `brif` (
+  `id` int(11) NOT NULL,
+  `fio` varchar(255) NOT NULL,
+  `contact` varchar(255) NOT NULL,
+  `data` varchar(255) NOT NULL,
+  `about` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -118,7 +134,9 @@ CREATE TABLE `doc` (
 INSERT INTO `doc` (`id`, `title`) VALUES
 (1, 'Документы'),
 (2, 'Полезные ресурсы'),
-(3, 'Издания и публикации');
+(3, 'Издания и публикации'),
+(4, 'Отчеты'),
+(5, 'База СМСП');
 
 -- --------------------------------------------------------
 
@@ -396,6 +414,21 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id`, `username`, `auth_key`, `password_hash`, `password_reset_token`, `email`, `status`, `created_at`, `updated_at`) VALUES
 (1, 'admin', 'AGZeIsTblq-Ga6ZAARgCFIuFdUbZrart', '$2y$13$lmrlHbNGdMKWjtrRzP9YoucHvzANGK0pwL/pafnPT9gAGMfHDgB9O', NULL, 'admin@admin.ru', 10, 1531572044, 1531572044);
 
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `сounseling`
+--
+
+CREATE TABLE `сounseling` (
+  `id` int(11) NOT NULL,
+  `fio` varchar(255) NOT NULL,
+  `contact` varchar(255) NOT NULL,
+  `data` varchar(255) NOT NULL,
+  `subject` varchar(255) NOT NULL,
+  `text_subject` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 --
 -- Индексы сохранённых таблиц
 --
@@ -404,6 +437,12 @@ INSERT INTO `user` (`id`, `username`, `auth_key`, `password_hash`, `password_res
 -- Индексы таблицы `about`
 --
 ALTER TABLE `about`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `brif`
+--
+ALTER TABLE `brif`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -511,6 +550,12 @@ ALTER TABLE `user`
   ADD UNIQUE KEY `password_reset_token` (`password_reset_token`);
 
 --
+-- Индексы таблицы `сounseling`
+--
+ALTER TABLE `сounseling`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT для сохранённых таблиц
 --
 
@@ -519,81 +564,109 @@ ALTER TABLE `user`
 --
 ALTER TABLE `about`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT для таблицы `brif`
+--
+ALTER TABLE `brif`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT для таблицы `company`
 --
 ALTER TABLE `company`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
 --
 -- AUTO_INCREMENT для таблицы `company_activity`
 --
 ALTER TABLE `company_activity`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT для таблицы `contacts`
 --
 ALTER TABLE `contacts`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT для таблицы `doc`
 --
 ALTER TABLE `doc`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
 --
 -- AUTO_INCREMENT для таблицы `field_of_activity`
 --
 ALTER TABLE `field_of_activity`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT для таблицы `materials`
 --
 ALTER TABLE `materials`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
 --
 -- AUTO_INCREMENT для таблицы `news`
 --
 ALTER TABLE `news`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
 --
 -- AUTO_INCREMENT для таблицы `section`
 --
 ALTER TABLE `section`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT для таблицы `services`
 --
 ALTER TABLE `services`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT для таблицы `slider`
 --
 ALTER TABLE `slider`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
 --
 -- AUTO_INCREMENT для таблицы `slidermain`
 --
 ALTER TABLE `slidermain`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 --
 -- AUTO_INCREMENT для таблицы `sliderservices`
 --
 ALTER TABLE `sliderservices`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
 --
 -- AUTO_INCREMENT для таблицы `team`
 --
 ALTER TABLE `team`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
 --
 -- AUTO_INCREMENT для таблицы `type_company`
 --
 ALTER TABLE `type_company`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT для таблицы `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT для таблицы `сounseling`
+--
+ALTER TABLE `сounseling`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- Ограничения внешнего ключа сохраненных таблиц
 --
@@ -622,6 +695,7 @@ ALTER TABLE `slider`
 --
 ALTER TABLE `sliderservices`
   ADD CONSTRAINT `sliderservices_ibfk_1` FOREIGN KEY (`id_services`) REFERENCES `services` (`id`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
