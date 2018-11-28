@@ -28,35 +28,45 @@ $this->title = 'Новости и события';
     <div class="modal-container__modal-dialog">
         <div class="modal-dialog__modal-header">
             <a class="modal_close">
-                <svg viewBox="0 0 64 64"><g><path d="M28.941,31.786L0.613,60.114c-0.787,0.787-0.787,2.062,0,2.849c0.393,0.394,0.909,0.59,1.424,0.59 c0.516,0,1.031-0.196,1.424-0.59l28.541-28.541l28.541,28.541c0.394,0.394,0.909,0.59,1.424,0.59c0.515,0,1.031-0.196,1.424-0.59 c0.787-0.787,0.787-2.062,0-2.849L35.064,31.786L63.41,3.438c0.787-0.787,0.787-2.062,0-2.849c-0.787-0.786-2.062-0.786-2.848,0 L32.003,29.15L3.441,0.59c-0.787-0.786-2.061-0.786-2.848,0c-0.787,0.787-0.787,2.062,0,2.849L28.941,31.786z"/></g></svg>
+                <svg viewBox="0 0 64 64">
+                    <g>
+                        <path d="M28.941,31.786L0.613,60.114c-0.787,0.787-0.787,2.062,0,2.849c0.393,0.394,0.909,0.59,1.424,0.59 c0.516,0,1.031-0.196,1.424-0.59l28.541-28.541l28.541,28.541c0.394,0.394,0.909,0.59,1.424,0.59c0.515,0,1.031-0.196,1.424-0.59 c0.787-0.787,0.787-2.062,0-2.849L35.064,31.786L63.41,3.438c0.787-0.787,0.787-2.062,0-2.849c-0.787-0.786-2.062-0.786-2.848,0 L32.003,29.15L3.441,0.59c-0.787-0.786-2.061-0.786-2.848,0c-0.787,0.787-0.787,2.062,0,2.849L28.941,31.786z"/>
+                    </g>
+                </svg>
             </a>
             <h1 class="header-block">Календарь мероприятий</h1>
         </div>
         <div class="modal-dialog__modal-body">
+
+
             <!--Календарь-->
             <script>
                 //отметки на календаре
                 var codropsEvents = {
                     <?php foreach ($news as $item): ?>
 
-                    '<?= date('m-d-Y', strtotime($item->date)); ?>': '<?= $item->title ?>',
+
+                    <?php  $content[$item[date_ivent]] .= '<a href="'. \yii\helpers\Url::to(['/site/newsfull/', 'id' => $item->id]).'">'.$item->title.'</a>'; ?>
+                    <?php $date = explode('.', $item[date_ivent]); ?>
+                    '<?= $date[1] . '-' . $date[0] . '-' . $date[2] ?>': '<?= $content[$item[date_ivent]] ?>',
+
 
                     <?php endforeach; ?>
                 };
             </script>
-                <div class="custom-calendar-wrap">
-                    <div id="custom-inner" class="custom-inner">
-                        <div class="custom-header clearfix">
-                            <nav>
-                                <span id="custom-prev" class="custom-prev"></span>
-                                <span id="custom-next" class="custom-next"></span>
-                            </nav>
-                            <h2 id="custom-month" class="custom-month"></h2>
-                            <h3 id="custom-year" class="custom-year"></h3>
-                        </div>
-                        <div id="calendar" class="fc-calendar-container"></div>
+            <div class="custom-calendar-wrap">
+                <div id="custom-inner" class="custom-inner">
+                    <div class="custom-header clearfix">
+                        <nav>
+                            <span id="custom-prev" class="custom-prev"></span>
+                            <span id="custom-next" class="custom-next"></span>
+                        </nav>
+                        <h2 id="custom-month" class="custom-month"></h2>
+                        <h3 id="custom-year" class="custom-year"></h3>
                     </div>
+                    <div id="calendar" class="fc-calendar-container"></div>
                 </div>
+            </div>
             <!-- /Календарь -->
         </div>
 
@@ -66,6 +76,7 @@ $this->title = 'Новости и события';
 <!-- /Модальное окно календаря -->
 
 <main class="content-container">
+
     <section class="main__news-tile stock-sec-padd first-sec-top-padd">
         <div class="container">
             <div class="row">
@@ -106,7 +117,22 @@ $this->title = 'Новости и события';
                         <div class="filter-publ-block__right rule-padd-lr rule-padd-tb-mini">
                             <div class="right__description-block">
                                 <a href="#modal5" class="more-link v2 togIndicator open_modal">
-                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><g><g><path d="M29.334,3H25V1c0-0.553-0.447-1-1-1s-1,0.447-1,1v2h-6V1c0-0.553-0.448-1-1-1s-1,0.447-1,1v2H9V1c0-0.553-0.448-1-1-1S7,0.447,7,1v2H2.667C1.194,3,0,4.193,0,5.666v23.667C0,30.806,1.194,32,2.667,32h26.667C30.807,32,32,30.806,32,29.333V5.666C32,4.193,30.807,3,29.334,3z M30,29.333C30,29.701,29.701,30,29.334,30H2.667C2.299,30,2,29.701,2,29.333V5.666C2,5.299,2.299,5,2.667,5H7v2c0,0.553,0.448,1,1,1s1-0.447,1-1V5h6v2c0,0.553,0.448,1,1,1s1-0.447,1-1V5h6v2c0,0.553,0.447,1,1,1s1-0.447,1-1V5h4.334C29.701,5,30,5.299,30,5.666V29.333z"/><rect x="7" y="12" width="4" height="3"/><rect x="7" y="17" width="4" height="3"/><rect x="7" y="22" width="4" height="3"/><rect x="14" y="22" width="4" height="3"/><rect x="14" y="17" width="4" height="3"/><rect x="14" y="12" width="4" height="3"/><rect x="21" y="22" width="4" height="3"/><rect x="21" y="17" width="4" height="3"/><rect x="21" y="12" width="4" height="3"/></g></g></svg>
+                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                                        <g>
+                                            <g>
+                                                <path d="M29.334,3H25V1c0-0.553-0.447-1-1-1s-1,0.447-1,1v2h-6V1c0-0.553-0.448-1-1-1s-1,0.447-1,1v2H9V1c0-0.553-0.448-1-1-1S7,0.447,7,1v2H2.667C1.194,3,0,4.193,0,5.666v23.667C0,30.806,1.194,32,2.667,32h26.667C30.807,32,32,30.806,32,29.333V5.666C32,4.193,30.807,3,29.334,3z M30,29.333C30,29.701,29.701,30,29.334,30H2.667C2.299,30,2,29.701,2,29.333V5.666C2,5.299,2.299,5,2.667,5H7v2c0,0.553,0.448,1,1,1s1-0.447,1-1V5h6v2c0,0.553,0.448,1,1,1s1-0.447,1-1V5h6v2c0,0.553,0.447,1,1,1s1-0.447,1-1V5h4.334C29.701,5,30,5.299,30,5.666V29.333z"/>
+                                                <rect x="7" y="12" width="4" height="3"/>
+                                                <rect x="7" y="17" width="4" height="3"/>
+                                                <rect x="7" y="22" width="4" height="3"/>
+                                                <rect x="14" y="22" width="4" height="3"/>
+                                                <rect x="14" y="17" width="4" height="3"/>
+                                                <rect x="14" y="12" width="4" height="3"/>
+                                                <rect x="21" y="22" width="4" height="3"/>
+                                                <rect x="21" y="17" width="4" height="3"/>
+                                                <rect x="21" y="12" width="4" height="3"/>
+                                            </g>
+                                        </g>
+                                    </svg>
                                     <span>Календарь мероприятий</span>
                                     <div class="indicator">2</div>
                                 </a>
