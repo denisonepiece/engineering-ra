@@ -43,13 +43,18 @@ $this->title = 'Новости и события';
             <script>
                 //отметки на календаре
                 var codropsEvents = {
+                    <?php $count = 0; ?>
                     <?php foreach ($news as $item): ?>
 
 
                     <?php  $content[$item[date_ivent]] .= '<a href="'. \yii\helpers\Url::to(['/site/newsfull/', 'id' => $item->id]).'">'.$item->title.'</a>'; ?>
                     <?php $date = explode('.', $item[date_ivent]); ?>
-                    '<?= $date[1] . '-' . $date[0] . '-' . $date[2] ?>': '<?= $content[$item[date_ivent]] ?>',
 
+
+                    <?php if(date('d.m.Y') < $item[date_ivent]): ?>
+                    <?php $count += 1;  ?>
+                    '<?= $date[1] . '-' . $date[0] . '-' . $date[2] ?>': '<?= $content[$item[date_ivent]] ?>',
+                    <?php endif; ?>
 
                     <?php endforeach; ?>
                 };
@@ -76,7 +81,6 @@ $this->title = 'Новости и события';
 <!-- /Модальное окно календаря -->
 
 <main class="content-container">
-
     <section class="main__news-tile stock-sec-padd first-sec-top-padd">
         <div class="container">
             <div class="row">
@@ -87,6 +91,7 @@ $this->title = 'Новости и события';
                 </div>
             </div>
         </div>
+
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
@@ -134,7 +139,7 @@ $this->title = 'Новости и события';
                                         </g>
                                     </svg>
                                     <span>Календарь мероприятий</span>
-                                    <div class="indicator">2</div>
+                                    <div class="indicator"><?= $count ?></div>
                                 </a>
                             </div>
                             <div class="right__function-block" style="display: none;">
