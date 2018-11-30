@@ -32,15 +32,6 @@ $this->title = 'Справочник компаний';
                                 Тип:
                             </div>
                             <div class="left__function-block">
-<!---->
-<!--                                <div>-->
-<!--                                    <input id="radio-all" class="radio-custom" name="radio-group" type="radio" value="0"-->
-<!--                                           --><?php
-//                                           if ($_SERVER[REQUEST_URI] == '/site/company'){
-//                                           ?><!--checked --><?php //}  ?><!-->
-<!--                                    <label for="radio-all" class="radio-custom-label">Все</label>-->
-<!--                                </div>-->
-
                                 <?php
                                 foreach ($type as $value) {
                                     ?>
@@ -63,6 +54,7 @@ $this->title = 'Справочник компаний';
                             <div class="right__function-block">
                                 <div>
                                     <select class="custom-select">
+                                        <option disabled selected>Выбрать</option>
                                         <?php
                                         foreach ($activity as $value) {
                                             ?>

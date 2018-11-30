@@ -30,7 +30,6 @@ class Services extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['title', 'content', 'deadline', 'status', 'support'], 'required'],
             [['title', 'content', 'status', 'support', 'material'], 'string'],
             [['deadline', 'img'], 'safe'],
         ];
@@ -49,7 +48,7 @@ class Services extends \yii\db\ActiveRecord
             'deadline' => 'Дата окончания приема заявок',
             'status' => 'Статус',
             'material' => 'Материалы и документация',
-            'support' => 'Размер гос. поддержки',
+            'support' => 'Цена',
         ];
     }
 }

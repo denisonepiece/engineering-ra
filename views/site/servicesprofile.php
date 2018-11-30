@@ -108,18 +108,24 @@ $this->title = 'Услуга';
                         <div class="under-header__right">
                             <div class="right__info">
                                 <div class="info__left">
+                                    <?php if($services->deadline): ?>
                                     <div class="left__position">
                                         <div class="position__name">Срок подачи заявок:</div>
                                         <div class="position__desc">до <?=$services->deadline?></div>
                                     </div>
+                                    <?php endif;?>
+                                    <?php if($services->status): ?>
                                     <div class="left__position">
                                         <div class="position__name">Статус услуги:</div>
                                         <div class="position__desc"><?=$services->status?></div>
                                     </div>
+                                    <?php endif;?>
+                                    <?php if($services->support): ?>
                                     <div class="left__position">
                                         <div class="position__name">Цена</div>
                                         <div class="position__desc"><?=$services->support?></div>
                                     </div>
+                                    <?php endif;?>
                                 </div>
                                 <div class="info__right">
                                     <?php

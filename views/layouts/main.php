@@ -66,7 +66,7 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => 'республика
                             <li><a href="<?=\yii\helpers\Url::to(['/site/services/'])?>" <?php if(strpos(\yii\helpers\Url::to(),'services')){echo 'class="active"';}?>>Услуги</a></li>
                             <li><a href="<?=\yii\helpers\Url::to(['/site/contact/'])?>" <?php if(strpos(\yii\helpers\Url::to(),'contact')){echo 'class="active"';}?>>Контакты</a></li>
                             <li><a href="<?=\yii\helpers\Url::to(['/site/news/?type=2'])?>" <?php if(strpos(\yii\helpers\Url::to(),'news')){echo 'class="active"';}?>>Новости</a></li>
-                            <li><a href="<?=\yii\helpers\Url::to(['/site/company/?id_type=1&id_activity=1'])?>" <?php if(strpos(\yii\helpers\Url::to(),'company')){echo 'class="active"';}?>>Справочник компаний</a></li>
+                            <li><a href="<?=\yii\helpers\Url::to(['/site/company'])?>" <?php if(strpos(\yii\helpers\Url::to(),'company')){echo 'class="active"';}?>>Справочник компаний</a></li>
                             <li><a href="<?=\yii\helpers\Url::to(['/site/materials/'])?>" <?php if(strpos(\yii\helpers\Url::to(),'materials')){echo 'class="active"';}?>>Материалы и публикации</a></li>
                           </ul>
                         </div>
