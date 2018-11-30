@@ -29,9 +29,18 @@ $this->title = 'Справочник компаний';
                     <div class="filter-publ-block base-text">
                         <div class="filter-publ-block__left rule-padd-lr rule-padd-tb-mini">
                             <div class="left__description-block">
-                                Показать:
+                                Тип:
                             </div>
                             <div class="left__function-block">
+<!---->
+<!--                                <div>-->
+<!--                                    <input id="radio-all" class="radio-custom" name="radio-group" type="radio" value="0"-->
+<!--                                           --><?php
+//                                           if ($_SERVER[REQUEST_URI] == '/site/company'){
+//                                           ?><!--checked --><?php //}  ?><!-->
+<!--                                    <label for="radio-all" class="radio-custom-label">Все</label>-->
+<!--                                </div>-->
+
                                 <?php
                                 foreach ($type as $value) {
                                     ?>
