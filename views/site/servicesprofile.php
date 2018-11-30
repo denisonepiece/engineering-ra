@@ -1,18 +1,20 @@
 <?php
-$this->registerCssFile('@web/css/flexboxgrid.css',['depends' =>'app\assets\ApppAsset']);
-$this->registerCssFile('@web/css/main.css',['depends' =>'app\assets\ApppAsset']);
-$this->registerCssFile('@web/css/services.css',['depends' =>'app\assets\ApppAsset']);
-$this->registerCssFile('@web/css/slickySlider.css',['depends' =>'app\assets\ApppAsset']);
-$this->registerCssFile('@web/css/custom-elem.css',['depends' =>'app\assets\ApppAsset']);
-$this->registerJsFile('@web/js/slickySlider.js',['depends' =>'app\assets\ApppAsset']);
-$this->registerJsFile('@web/js/modal.js',['depends' =>'app\assets\ApppAsset']);
-$this->registerJsFile('@web/js/slickySlider-init.js',['depends' =>'app\assets\ApppAsset']);
+$this->registerCssFile('@web/css/flexboxgrid.css', ['depends' => 'app\assets\ApppAsset']);
+$this->registerCssFile('@web/css/main.css', ['depends' => 'app\assets\ApppAsset']);
+$this->registerCssFile('@web/css/services.css', ['depends' => 'app\assets\ApppAsset']);
+$this->registerCssFile('@web/css/slickySlider.css', ['depends' => 'app\assets\ApppAsset']);
+$this->registerCssFile('@web/css/custom-elem.css', ['depends' => 'app\assets\ApppAsset']);
+$this->registerJsFile('@web/js/slickySlider.js', ['depends' => 'app\assets\ApppAsset']);
+$this->registerJsFile('@web/js/modal.js', ['depends' => 'app\assets\ApppAsset']);
+$this->registerJsFile('@web/js/slickySlider-init.js', ['depends' => 'app\assets\ApppAsset']);
 
-$this->registerCssFile('@web/css/notification.css',['depends' =>'app\assets\ApppAsset']);
-$this->registerJsFile('@web/js/notification.js',['depends' =>'app\assets\ApppAsset']);
-$this->registerJsFile('@web/js/menu.js',['depends' =>'app\assets\ApppAsset']);
+$this->registerCssFile('@web/css/notification.css', ['depends' => 'app\assets\ApppAsset']);
+$this->registerJsFile('@web/js/notification.js', ['depends' => 'app\assets\ApppAsset']);
+$this->registerJsFile('@web/js/menu.js', ['depends' => 'app\assets\ApppAsset']);
+
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
+
 $this->title = 'Услуга';
 ?>
 <!-- Модальное окно на конкретную услугу START -->
@@ -20,7 +22,11 @@ $this->title = 'Услуга';
     <div class="modal-container__modal-dialog">
         <div class="modal-dialog__modal-header">
             <a class="modal_close">
-                <svg viewBox="0 0 64 64"><g><path d="M28.941,31.786L0.613,60.114c-0.787,0.787-0.787,2.062,0,2.849c0.393,0.394,0.909,0.59,1.424,0.59 c0.516,0,1.031-0.196,1.424-0.59l28.541-28.541l28.541,28.541c0.394,0.394,0.909,0.59,1.424,0.59c0.515,0,1.031-0.196,1.424-0.59 c0.787-0.787,0.787-2.062,0-2.849L35.064,31.786L63.41,3.438c0.787-0.787,0.787-2.062,0-2.849c-0.787-0.786-2.062-0.786-2.848,0 L32.003,29.15L3.441,0.59c-0.787-0.786-2.061-0.786-2.848,0c-0.787,0.787-0.787,2.062,0,2.849L28.941,31.786z"/></g></svg>
+                <svg viewBox="0 0 64 64">
+                    <g>
+                        <path d="M28.941,31.786L0.613,60.114c-0.787,0.787-0.787,2.062,0,2.849c0.393,0.394,0.909,0.59,1.424,0.59 c0.516,0,1.031-0.196,1.424-0.59l28.541-28.541l28.541,28.541c0.394,0.394,0.909,0.59,1.424,0.59c0.515,0,1.031-0.196,1.424-0.59 c0.787-0.787,0.787-2.062,0-2.849L35.064,31.786L63.41,3.438c0.787-0.787,0.787-2.062,0-2.849c-0.787-0.786-2.062-0.786-2.848,0 L32.003,29.15L3.441,0.59c-0.787-0.786-2.061-0.786-2.848,0c-0.787,0.787-0.787,2.062,0,2.849L28.941,31.786z"/>
+                    </g>
+                </svg>
             </a>
             <h1 class="header-block">Подать заявку</h1>
         </div>
@@ -54,8 +60,9 @@ $this->title = 'Услуга';
             </div>
 
             <div class="msg-forForm">
-                Нажимая кнопку «Подать заявку», я соглашаюсь с 
-                <a href="http://engineering-ra.ru/web/politic.pdf" target="_blank" class="more-link">правилами передачи и обработки персональных данных</a>
+                Нажимая кнопку «Подать заявку», я соглашаюсь с
+                <a href="http://engineering-ra.ru/web/politic.pdf" target="_blank" class="more-link">правилами передачи
+                    и обработки персональных данных</a>
             </div>
 
             <?php ActiveForm::end(); ?>
@@ -71,8 +78,8 @@ $this->title = 'Услуга';
             <div class="row">
                 <div class="col-md-7 col-sm col-xs">
                     <div class="services-profile__header header-block-wrp--bmrg">
-                        <h1 class="header-block header-block--bmrg-under">Услуги</h1>
-                        <h2 class="header-block"><?=$services->title?></h2>
+                        <h1 class="header-block header-block--bmrg-under">Услуга</h1>
+                        <h2 class="header-block"><?= $services->title ?></h2>
                     </div>
                 </div>
             </div>
@@ -82,13 +89,14 @@ $this->title = 'Услуга';
                 <div class="col-md col-sm col-xs">
                     <div class="services__under-header">
                         <div class="under-header__left">
+                            <?php if ($services->img): ?>
                             <div class="left__slider">
                                 <div class="gallery">
                                     <?php
                                     foreach ($slider as $item) {
                                         ?>
                                         <div class="gallery-cell"
-                                             style="background: url(<?=$item->img?>) no-repeat center;background-color: #F7F7F7;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;"></div>
+                                             style="background: url(<?= $item->img ?>) no-repeat center;background-color: #F7F7F7;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;"></div>
                                         <?php
                                     }
                                     ?>
@@ -97,35 +105,62 @@ $this->title = 'Услуга';
                                 <ol class="gallery-nav" style="display: none;">
                                     <?php
                                     foreach ($slider as $item) {
-                                    ?>
-                                    <li class="is-selected" style="background: url(<?=$item->img?>) no-repeat center;background-color: #F7F7F7;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;"></li>
+                                        ?>
+                                        <li class="is-selected"
+                                            style="background: url(<?= $item->img ?>) no-repeat center;background-color: #F7F7F7;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;"></li>
                                         <?php
                                     }
                                     ?>
                                 </ol>
                             </div>
+                            <?php else: ?>
+                            <div class="left__slider">
+                                <div class="gallery">
+                                    <?php
+                                    foreach ($slider as $item) {
+                                        ?>
+                                        <div class="gallery-cell"
+                                             style="background: url(/web/img/empty-serv.jpg) no-repeat center;background-color: #F7F7F7;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;"></div>
+                                        <?php
+                                    }
+                                    ?>
+                                </div>
+
+                                <ol class="gallery-nav" style="display: none;">
+                                    <?php
+                                    foreach ($slider as $item) {
+                                        ?>
+                                        <li class="is-selected"
+                                            style="background: url(<?= $item->img ?>) no-repeat center;background-color: #F7F7F7;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;"></li>
+                                        <?php
+                                    }
+                                    ?>
+                                </ol>
+                            </div>
+                            <?php endif; ?>
+
                         </div>
                         <div class="under-header__right">
                             <div class="right__info">
                                 <div class="info__left">
-                                    <?php if($services->deadline): ?>
-                                    <div class="left__position">
-                                        <div class="position__name">Срок подачи заявок:</div>
-                                        <div class="position__desc">до <?=$services->deadline?></div>
-                                    </div>
-                                    <?php endif;?>
-                                    <?php if($services->status): ?>
-                                    <div class="left__position">
-                                        <div class="position__name">Статус услуги:</div>
-                                        <div class="position__desc"><?=$services->status?></div>
-                                    </div>
-                                    <?php endif;?>
-                                    <?php if($services->support): ?>
-                                    <div class="left__position">
-                                        <div class="position__name">Цена</div>
-                                        <div class="position__desc"><?=$services->support?></div>
-                                    </div>
-                                    <?php endif;?>
+                                    <?php if ($services->deadline): ?>
+                                        <div class="left__position">
+                                            <div class="position__name">Срок подачи заявок:</div>
+                                            <div class="position__desc">до <?= $services->deadline ?></div>
+                                        </div>
+                                    <?php endif; ?>
+                                    <?php if ($services->status): ?>
+                                        <div class="left__position">
+                                            <div class="position__name">Статус услуги:</div>
+                                            <div class="position__desc"><?= $services->status ?></div>
+                                        </div>
+                                    <?php endif; ?>
+                                    <?php if ($services->support): ?>
+                                        <div class="left__position">
+                                            <div class="position__name">Цена</div>
+                                            <div class="position__desc"><?= $services->support ?></div>
+                                        </div>
+                                    <?php endif; ?>
                                 </div>
                                 <div class="info__right">
                                     <?php
@@ -135,7 +170,7 @@ $this->title = 'Услуга';
                                             <div class="position__name">Материалы и документация:</div>
                                             <div class="position__desc">
                                                 <div class="btn-group">
-                                                    <a href="<?=$services->material?>" class="btn decor-link">
+                                                    <a href="<?= $services->material ?>" class="btn decor-link">
                                                         <svg viewBox="0 0 80 80">
                                                             <g>
                                                                 <path d="M29.298,63.471l-4.048,4.02c-3.509,3.478-9.216,3.481-12.723,0
@@ -176,7 +211,7 @@ $this->title = 'Услуга';
             <div class="row">
                 <div class="col-md-8 col-sm-12 col-xs-12">
                     <div class="services-profile__text base-text for-content-ptop">
-                        <?=$services->content?>
+                        <?= $services->content ?>
                     </div>
                 </div>
             </div>
@@ -187,13 +222,18 @@ $this->title = 'Услуга';
                     <div class="services-profile__footer">
                         <div class="btn-group">
                             <a href="" onclick="history.back();return false;" class="btn pag-btn pag-text">
-                                <svg viewBox="0 0 512.001 512.001"><g><g><path d="M384.834,180.699c-0.698,0-348.733,0-348.733,0l73.326-82.187c4.755-5.33,4.289-13.505-1.041-18.26
+                                <svg viewBox="0 0 512.001 512.001">
+                                    <g>
+                                        <g>
+                                            <path d="M384.834,180.699c-0.698,0-348.733,0-348.733,0l73.326-82.187c4.755-5.33,4.289-13.505-1.041-18.26
                                         c-5.328-4.754-13.505-4.29-18.26,1.041l-82.582,92.56c-10.059,11.278-10.058,28.282,0.001,39.557l82.582,92.561
                                         c2.556,2.865,6.097,4.323,9.654,4.323c3.064,0,6.139-1.083,8.606-3.282c5.33-4.755,5.795-12.93,1.041-18.26l-73.326-82.188
                                         c0,0,348.034,0,348.733,0c55.858,0,101.3,45.444,101.3,101.3s-45.443,101.3-101.3,101.3h-61.58
                                         c-7.143,0-12.933,5.791-12.933,12.933c0,7.142,5.79,12.933,12.933,12.933h61.58c70.12,0,127.166-57.046,127.166-127.166
                                         C512,237.745,454.954,180.699,384.834,180.699z"/>
-                                        </g></g></svg>
+                                        </g>
+                                    </g>
+                                </svg>
                                 <span>Назад</span>
                             </a>
                         </div>
