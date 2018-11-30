@@ -117,7 +117,7 @@ $this->title = 'Услуга';
                                         <div class="position__desc"><?=$services->status?></div>
                                     </div>
                                     <div class="left__position">
-                                        <div class="position__name">Максимальный размер господдержки:</div>
+                                        <div class="position__name">Цена</div>
                                         <div class="position__desc"><?=$services->support?></div>
                                     </div>
                                 </div>

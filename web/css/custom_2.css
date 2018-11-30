@@ -1,5 +1,11 @@
 /* Custom calendar elements */
 
+.custom-calendar-wrap div {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;	
+}
+
 .custom-calendar-wrap {
 	width: 50vw;
 	position: relative;
@@ -40,6 +46,7 @@
 	position: relative;
 	border-top: 5px solid #f55b05;
 	border-bottom: 1px solid #ddd;
+
 }
 
 .custom-header h2,
