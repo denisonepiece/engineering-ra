@@ -103,56 +103,26 @@ $this->title = 'Контакты';
             </div>
             <div class="container">
                 <div class="row">
+
+                    <?php foreach ($cofounder as $item): ?>
                     <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12 for-content-mb-v2">
                         <div class="tile-bg-style">
                             <div class="base-text for-content-mb-v2">
-                                Государственное бюджетное учреждение Республики Алтай осуществляет функции Регионального центра инжиниринга Республики Алтай.
+                                <?=$item['about'] ?>
                             </div>
                             <div class="contacts__info-block base-text">
                                 <div class="info-block__header">Контакты:</div>
                                 <div class="info-block__desc">
-                                    Горно-Алтайск, ул. Комсомольская, 9<br/>
-                                    Тел./факс: <a href="tel:7388-2247241" class="more-link">+7 (388-22) 47241</a><br/>
-                                    E-mail: <a href="mailto:binkra@yandex.ru" class="more-link">binkra@yandex.ru</a><br/>
-                                    Сайт: <a href="http://binkra.ru/" target="_blank" class="more-link">binkra.ru</a>
+                                    <?=$item['address'] ?><br/>
+                                    Тел./факс: <a href="tel:<?=$item['telephone'] ?>" class="more-link"><?=$item['telephone'] ?></a><br/>
+                                    E-mail: <a href="mailto:<?=$item['email'] ?>" class="more-link"><?=$item['email'] ?></a><br/>
+                                    Сайт: <a href="http://<?=$item['site'] ?>/" target="_blank" class="more-link"><?=$item['site'] ?></a>
                                 </div>
                             </div>    
                         </div>                                              
                     </div>
-
-                    <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12 for-content-mb-v2">
-                        <div class="tile-bg-style">
-                            <div class="base-text for-content-mb-v2">
-                                Учредителем является Министерство экономического развития и туризма Республики Алтай
-                            </div>
-                            <div class="contacts__info-block base-text">
-                                <div class="info-block__header">Контакты:</div>
-                                <div class="info-block__desc">
-                                    Горно-Алтайск, Валерия Чаптынова, 24<br/>
-                                    Тел./факс: <a href="tel:73882226595" class="more-link">+7 (388-22) 26595</a><br/>
-                                    E-mail: <a href="mailto:mineco04@mail.ru" class="more-link">mineco04@mail.ru</a><br/>
-                                    Сайт: <a href="http://mineco04.ru/" target="_blank" class="more-link">mineco04.ru</a>
-                                </div>
-                            </div>                            
-                        </div>                                             
-                    </div>
-
-                    <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12 for-content-mb-v2">
-                        <div class="tile-bg-style">
-                            <div class="base-text for-content-mb-v2">
-                                Собственником имущества Учреждения, закрепленного на праве оперативного управления за последним является - Министерство природных ресурсов, экологии и имущественных отношений Республики Алтай
-                            </div>
-                            <div class="contacts__info-block base-text">
-                                <div class="info-block__header">Контакты:</div>
-                                <div class="info-block__desc">
-                                    Горно-Алтайск, ул. Ленкина, 12<br/>
-                                    Тел./факс: <a href="tel:73882267291" class="more-link">+7 (388-22) 67291</a><br/>
-                                    E-mail: <a href="mailto:forest04@mail.ru" class="more-link">forest04@mail.ru</a><br/>
-                                    Сайт: <a href="https://mpr-ra.ru/" target="_blank" class="more-link">mpr-ra.ru</a>
-                                </div>
-                            </div>                            
-                        </div>                                              
-                    </div>                    
+                    <?php endforeach; ?>
+                    
                 </div>
             </div>
         </section>        

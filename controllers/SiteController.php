@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\models\About;
+use app\models\CoFounder;
 use app\models\Company;
 use app\models\Contacts;
 use app\models\Doc;
@@ -125,11 +126,13 @@ class SiteController extends Controller
      */
     public function actionContact()
     {
+        $cofounder = CoFounder::find()->asArray()->all();
         $contacts = Contacts::find()->one();
         $team = Team::find()->all();
         return $this->render('contact', [
             'contacts' => $contacts,
             'team' => $team,
+            'cofounder' => $cofounder,
         ]);
     }
 
