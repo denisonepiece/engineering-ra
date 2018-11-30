@@ -479,6 +479,10 @@ h1.header-mainSlider {
     margin-bottom: 3.5em;
 }
 
+.for-content-mb-v2 {
+    margin-bottom: 2em;
+}
+
 /********** Кнопки **********/
 
 .btn {
@@ -1367,6 +1371,12 @@ h1.header-mainSlider {
     z-index: 20;
 }
 
+.tile-bg-style {
+    background-color: #ebebeb;
+    padding: 2rem;
+    height: 100%;
+}
+
 .mapshow {
     height: 100%;
 }
@@ -1491,6 +1501,7 @@ textarea {
 .info-block__header {
     margin-bottom: 1em;
     color: #5b4132;
+    font-family: 'OswaldSemiBold';
 }
 
 .info-block__desc {
