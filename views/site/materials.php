@@ -77,7 +77,7 @@ $this->title = 'Материалы и публикации';
                                                 ?>
                                                 <div class="btn-group">
                                                     <?php
-                                                    if (strpos($material->content, 'http') or strpos($material->content, 'engineering-ra')){
+                                                    if (strpos($material->content, 'http') or strpos($material->content, 'engineering-ra') or strpos($material->content, 'pdf') ){
                                                     ?>
                                                     <a href="<?= $material->content ?>" class="btn decor-link"
                                                        target="_blank">
