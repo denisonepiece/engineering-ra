@@ -1369,6 +1369,7 @@ h1.header-mainSlider {
     background-color: #ebebeb;
     padding: 2rem;
     height: 100%;
+    box-sizing: border-box;
 }
 
 .mapshow {
