@@ -31,12 +31,15 @@ $this->title = 'О центре';
                 </div>
 
                 <div class="col-md-5 col-sm-5 col-xs-12">
-                    <div class="about__info-block rule-padd-lr-tb">
+                    <div class="about__info-block rule-padd-lr-tb for-content-mb-v2">
                         <h2 class="header-block white-color header-block--bmrg"><?=$about->titleabout?></h2>
                         <div class="base-text">
                             <?=$about->contantabout?>
                         </div>
                     </div>
+                    <div class="btn-group">
+                        <a href="<?=\yii\helpers\Url::to(['/site/services'])?>" class="btn one-btn">Услуги центра</a>
+                    </div>                    
                 </div>
             </div>
         </div>
