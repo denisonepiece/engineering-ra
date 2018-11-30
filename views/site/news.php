@@ -1,7 +1,5 @@
 <?php
 
-use yii\widgets\LinkPager;
-
 $this->registerCssFile('@web/css/flexboxgrid.css', ['depends' => 'app\assets\ApppAsset']);
 $this->registerCssFile('@web/css/main.css', ['depends' => 'app\assets\ApppAsset']);
 $this->registerCssFile('@web/css/custom-elem.css', ['depends' => 'app\assets\ApppAsset']);
@@ -51,7 +49,7 @@ $this->title = 'Новости и события';
                     <?php $date = explode('.', $item[date_ivent]); ?>
 
 
-                    <?php if(date('d.m.Y') < $item[date_ivent]): ?>
+                    <?php if(date('d.m.Y') <= $item[date_ivent]): ?>
                     <?php $count += 1;  ?>
                     '<?= $date[1] . '-' . $date[0] . '-' . $date[2] ?>': '<?= $content[$item[date_ivent]] ?>',
                     <?php endif; ?>
