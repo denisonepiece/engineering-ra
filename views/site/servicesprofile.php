@@ -53,6 +53,9 @@ $this->title = 'Услуга';
                 <?= Html::submitButton('Подать заявку', ['class' => 'btn one-btn', 'name' => 'contact-button']) ?>
             </div>
             <div class="msg-forForm">
+                <a href="/web/reglament.pdf" target="_blank" class="more-link">Регламенты оказания услуг РЦИ РА</a>
+            </div>            
+            <div class="msg-forForm">
                 Нажимая кнопку «Подать заявку», я соглашаюсь с
                 <a href="http://engineering-ra.ru/web/politic.pdf" target="_blank" class="more-link">правилами передачи
                 и обработки персональных данных</a>
@@ -145,7 +148,7 @@ $this->title = 'Услуга';
                 <?php if ($services->support): ?>
                 <div class="col-md-2 col-sm-3 col-xs-12">
                     <div class="position">
-                        <div class="position__name">Цена</div>
+                        <div class="position__name">Цена:</div>
                         <div class="position__desc"><?= $services->support ?></div>
                     </div>
                 </div>
@@ -192,7 +195,9 @@ $this->title = 'Услуга';
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-sm-12 col-xs-12">
+
                         <div class="services-profile__text base-text for-content-ptop">
+                        	                    	<div class="position__name">Описание:</div>
                             <?= $services->content ?>
                         </div>
                     </div>
