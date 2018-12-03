@@ -49,11 +49,10 @@ $this->title = 'Новости и события';
                     <?php $date = explode('.', $item[date_ivent]); ?>
 
 
-                    <?php if(date('d.m.Y') <= $item[date_ivent]): ?>
+                    <?php if((date('m') <= $date[1]) && (date('d') <= $date[0]) && (date('Y') <= $date[2]) ): ?>
                     <?php $count += 1;  ?>
                     '<?= $date[1] . '-' . $date[0] . '-' . $date[2] ?>': '<?= $content[$item[date_ivent]] ?>',
                     <?php endif; ?>
-
                     <?php endforeach; ?>
                 };
             </script>
@@ -89,7 +88,6 @@ $this->title = 'Новости и события';
                 </div>
             </div>
         </div>
-
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">

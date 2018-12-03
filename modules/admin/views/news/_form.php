@@ -41,40 +41,40 @@ use yii\helpers\Url;
         ]
     ]);
     ?>
-    <?php
-    if(!strpos(Url::to(), 'create')) {
-        if ($slider_update) {
-            ?>
-            <br>
-            <h2> Слайдер </h2>
-            <table class="table table-bordered">
-                <thead>
-                <tr>
-                    <th>картинка</th>
-                    <th>Удалить</th>
-                </tr>
-                </thead>
-                <tbody>
-
-                <?php
-
-                foreach ($slider_update as $item) {
-                    ?>
-                    <tr>
-                        <td><img src="<?= $item->img ?>" style="width: 150px;"></td>
-                        <td>
-                            <button type="button" class="btn btn-warning delete-slider-news" id="<?= $item->id ?>">Удалить!</button>
-                        </td>
-                    </tr>
-                <?php } ?>
-                </tbody>
-            </table>
-            <?php
-        } else {
-            echo "<h2>Изображения отсутствуют!</h2>";
-        }
-    }?>
-    <?= $form->field($slider, 'img[]')->fileInput(['multiple' => true, 'accept' => 'image/*']) ?>
+<!--    --><?php
+//    if(!strpos(Url::to(), 'create')) {
+//        if ($slider_update) {
+//            ?>
+<!--            <br>-->
+<!--            <h2> Слайдер </h2>-->
+<!--            <table class="table table-bordered">-->
+<!--                <thead>-->
+<!--                <tr>-->
+<!--                    <th>картинка</th>-->
+<!--                    <th>Удалить</th>-->
+<!--                </tr>-->
+<!--                </thead>-->
+<!--                <tbody>-->
+<!---->
+<!--                --><?php
+//
+//                foreach ($slider_update as $item) {
+//                    ?>
+<!--                    <tr>-->
+<!--                        <td><img src="--><?//= $item->img ?><!--" style="width: 150px;"></td>-->
+<!--                        <td>-->
+<!--                            <button type="button" class="btn btn-warning delete-slider-news" id="--><?//= $item->id ?><!--">Удалить!</button>-->
+<!--                        </td>-->
+<!--                    </tr>-->
+<!--                --><?php //} ?>
+<!--                </tbody>-->
+<!--            </table>-->
+<!--            --><?php
+//        } else {
+//            echo "<h2>Изображения отсутствуют!</h2>";
+//        }
+//    }?>
+<!--    --><?//= $form->field($slider, 'img[]')->fileInput(['multiple' => true, 'accept' => 'image/*']) ?>
     <?= $form->field($model, 'event')->checkbox() ?>
     <?php
 
