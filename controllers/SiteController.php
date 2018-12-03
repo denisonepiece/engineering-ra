@@ -17,8 +17,10 @@ use app\models\Services;
 use app\models\Slider;
 use app\models\Slidermain;
 use app\models\Sliderservices;
+use app\models\Star;
 use app\models\Team;
 use app\models\TypeCompany;
+use app\models\StarForm;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -285,17 +287,21 @@ class SiteController extends Controller
     }
 
     public function actionInfrastructure() {
-
         $infstr = Infrastructure::find()->all();
-        //old
-        $materials = Materials::find()->all();
-        $doc = Doc::find()->all();
-        $section = Section::find()->all();
+        $model = new StarForm();
+        $mode = new Star();
+        if ($model->load(Yii::$app->request->post())){
+            $mode->stars = $model->stars;
+            $mode->save();
+            $model->body = "Оценка сайта \n
+            Оценка: ".$model->stars;
+//            $model->contact('info@engineering-ra.ru');
+            $model->contact('info@hld.agency');
+        }
+
         return $this->render('infrastructure',[
             'infstr' => $infstr,
-            'materials' => $materials,
-            'doc' => $doc,
-            'section' => $section,
+            'model' => $model,
         ]);
 
 

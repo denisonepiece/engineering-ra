@@ -37,14 +37,15 @@ AppAsset::register($this);
     ]);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
-        'items' => [
+        'items' =>[
+            ['label' => 'Оценки', 'url' => ['/admin/star']],
             ['label' => 'Новости', 'url' => ['/admin/news']],
             ['label' => 'Компании', 'url' => ['/admin/company']],
             ['label' => 'Слайдер', 'url' => ['/admin/slidermain']],
             ['label' => 'Услуги', 'url' => ['/admin/services']],
             ['label' => 'Инфраструктура', 'url' => ['/admin/infrastructure']],
             ['label' => 'Материалы', 'url' => ['/admin/materials']],
-            ['label' => 'Текстовые страницы', 'url' => ['/admin/page']],
+            ['label' => 'Тек. страницы', 'url' => ['/admin/page']],
             ['label' => 'Команда', 'url' => ['/admin/team']],
             ['label' => 'О центре', 'url' => ['/admin/about/update?id=1']],
             ['label' => 'Контакты', 'url' => ['/admin/contacts/update?id=1']],
@@ -54,7 +55,7 @@ AppAsset::register($this);
                 '<li>'
                 . Html::beginForm(['/admin/login/logout'], 'post')
                 . Html::submitButton(
-                    'Logout (' . Yii::$app->user->identity->username . ')',
+                    'Logout',
                     ['class' => 'btn btn-link logout']
                 )
                 . Html::endForm()
