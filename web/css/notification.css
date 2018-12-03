@@ -1,9 +1,8 @@
 .notification-bottom {
     position: fixed;
     bottom: 0;
-    width: 20%;
     z-index: 9950;
-    width: 100%;
+    width: 70%;
 }
 
 
@@ -34,11 +33,15 @@
 }
 
 .msg__body {
-    font-size: .9rem;
+    font-size: .8rem;
+}
+
+.msg__body a{
+    font-size: .8rem;
 }
 
 .msg__footer .one-btn {
-    font-size: .8rem;
+    font-size: .770rem;
 }
 
 

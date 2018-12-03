@@ -36,9 +36,7 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => 'республика
     <div class="wrapper">
       <header>
         <section class="header__menu-container">
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-md col-sm col-xs col-no-padding">
+          
                 <div class="menu-resp-wrp">
                   <div class="menu-resp">
                     <div class="menu-resp__logo">
@@ -77,9 +75,6 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => 'республика
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
         </section>
       </header>
       <?= $content ?>

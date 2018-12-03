@@ -20,36 +20,30 @@
 }
 
 
-html,
+
 body {
-   width: 100vw;
-    font-size: 16px;
     color: #1a1a1a;
     padding: 0;
     margin: 0;
-    overflow-x: hidden;
     font-family: 'RobotoRegular';
     background-color: #f5f1ee;
     height: 100%;
 }
 
 @media screen and (max-width: 1200px) {
-    html,
-    body {
+    html {
         font-size: 15px;
     }
 }
 
 @media screen and (max-width: 991px) {
-    html,
-    body {
+     html {
         font-size: 14px;
     }
 }
 
 @media screen and (max-width: 767px) {
-    html,
-    body {
+    html {
         font-size: 13px;
     }
 }
@@ -103,6 +97,7 @@ footer {
 /**** Меню ****/
 
 .main-menu-row {
+    overflow: hidden;
     position: fixed;
     width: 100%;
     z-index: 9960;
@@ -122,13 +117,14 @@ footer {
     display: -o-flex;    
     display: flex;
 
-
+    position: relative;
+    overflow:hidden;
     -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
     justify-content: space-between;
     align-items: center;
-    padding: 1.3em 2em;
+    padding: 1.1em 2em;
 }
 
 .main-logo img {
