@@ -24,99 +24,72 @@ $this->title = 'Новости и события';
                 </div>
             </div>
         </div>
-        <?php
-        if ($slider[0]->img) {
-            ?>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md col-sm col-xs">
-                        <div class="services__under-header">
-                            <div class="under-header__left">
-                                <div class="left__slider">
-                                    <ol class="gallery-nav" style="display: none;">
-                                        <?php
-                                        foreach ($slider as $item) {
-                                            ?>
-                                            <li class="is-selected"
-                                                style="background: url(<?= $item->img ?>/*) no-repeat center;background-color: #F7F7F7;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;"></li>
-                                            <?php
-                                        }
-                                        ?>
-                                    </ol>
-                                </div>
+        <div class="container">
+            <div class="row">
+                <!-- Инфо для событий СТАРТ -->
+                <?php
+                if ($news->event == 1) {
+                    ?>
+                    <div class="col-md-2 col-sm-3 col-xs-12">
+                        <div class="position">
+                            <div class="position__name">Мероприятие пройдёт:</div>
+                            <div class="position__desc"><?= $news->date_ivent ?></div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-3 col-xs-12">
+                        <div class="position">
+                            <div class="position__name">Место проведения:</div>
+                            <div class="position__desc"><?= $news->point ?></div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-3 col-xs-12">
+                        <div class="position">
+                            <div class="position__name">Формат мероприятия:</div>
+                            <div class="position__desc"><?= $news->format ?></div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-3 col-xs-12">
+                        <div class="position">
+                            <div class="position__name">Приём заявок:</div>
+                            <div class="position__desc"><?= $news->contact ?></div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-3 col-xs-12">
+                        <div class="position">
+                            <div class="position__name">Поделиться:</div>
+                            <div class="position__desc">
+                                <div class="ya-share2" data-services="vkontakte,facebook,odnoklassniki,twitter"
+                                     data-counter=""></div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <!-- Инфо для событий СТАРТ -->
                     <?php
-                    if ($news->event == 1) {
-                        ?>
-                        <div class="col-md-2 col-sm-3 col-xs-12">
-                            <div class="position">
-                                <div class="position__name">Мероприятие пройдёт:</div>
-                                <div class="position__desc"><?= $news->date_ivent ?></div>
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-sm-3 col-xs-12">
-                            <div class="position">
-                                <div class="position__name">Место проведения:</div>
-                                <div class="position__desc"><?= $news->point ?></div>
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-sm-3 col-xs-12">
-                            <div class="position">
-                                <div class="position__name">Формат мероприятия:</div>
-                                <div class="position__desc"><?= $news->format ?></div>
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-sm-3 col-xs-12">
-                            <div class="position">
-                                <div class="position__name">Приём заявок:</div>
-                                <div class="position__desc"><?= $news->contact ?></div>
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-sm-3 col-xs-12">
-                            <div class="position">
-                                <div class="position__name">Поделиться:</div>
-                                <div class="position__desc">
-                                    <div class="ya-share2" data-services="vkontakte,facebook,odnoklassniki,twitter"
-                                         data-counter=""></div>
-                                </div>
-                            </div>
-                        </div>
-                        <?php
-                    } else {
-                        ?>
-                        <!-- Инфо для событий КОНЕЦ -->
-                        <!-- Инфо для новостей СТАРТ -->
-                        <div class="col-md-2 col-sm-3 col-xs-12">
-                            <div class="position">
-                                <div class="position__name">Дата публикации:</div>
-                                <div class="position__desc"><?= date("d.m.Y", strtotime($news->date)) ?></div>
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-sm-3 col-xs-12">
-                            <div class="position">
-                                <div class="position__name">Поделиться:</div>
-                                <div class="position__desc">
-                                    <div class="ya-share2" data-services="vkontakte,facebook,odnoklassniki,twitter"
-                                         data-counter=""></div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Инфо для новостей КОНЕЦ -->
-                        <?php
-                    }
+                } else {
                     ?>
-                </div>
+                    <!-- Инфо для событий КОНЕЦ -->
+                    <!-- Инфо для новостей СТАРТ -->
+                    <div class="col-md-2 col-sm-3 col-xs-12">
+                        <div class="position">
+                            <div class="position__name">Дата публикации:</div>
+                            <div class="position__desc"><?= date("d.m.Y", strtotime($news->date)) ?></div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-3 col-xs-12">
+                        <div class="position">
+                            <div class="position__name">Поделиться:</div>
+                            <div class="position__desc">
+                                <div class="ya-share2" data-services="vkontakte,facebook,odnoklassniki,twitter"
+                                     data-counter=""></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Инфо для новостей КОНЕЦ -->
+                    <?php
+                }
+                ?>
             </div>
-            <?php
-        }
-        ?>
+        </div>
+
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-sm-12 col-xs-12">
