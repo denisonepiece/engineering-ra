@@ -27,38 +27,28 @@ $this->title = 'Новости и события';
         <?php
         if ($slider[0]->img) {
             ?>
-<!--            <div class="container">-->
-<!--                <div class="row">-->
-<!--                    <div class="col-md col-sm col-xs">-->
-<!--                        <div class="services__under-header">-->
-<!--                            <div class="under-header__left">-->
-<!--                                <div class="left__slider">-->
-<!--                                    <div class="gallery">-->
-<!--                                        --><?php
-//                                        foreach ($slider as $item) {
-//                                            ?>
-<!--                                            <div class="gallery-cell"-->
-<!--                                                 style="background: url(--><?//= $item->img ?>/*) no-repeat center;background-color: #F7F7F7;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;"></div>*/
-/*                                            */<?php
-//                                        }
-//                                        ?>
-<!--                                    </div>-->
-<!--                                    <ol class="gallery-nav" style="display: none;">-->
-<!--                                        --><?php
-//                                        foreach ($slider as $item) {
-//                                            ?>
-<!--                                            <li class="is-selected"-->
-<!--                                                style="background: url(--><?//= $item->img ?>/*) no-repeat center;background-color: #F7F7F7;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;"></li>*/
-/*                                            */<?php
-//                                        }
-//                                        ?>
-<!--                                    </ol>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md col-sm col-xs">
+                        <div class="services__under-header">
+                            <div class="under-header__left">
+                                <div class="left__slider">
+                                    <ol class="gallery-nav" style="display: none;">
+                                        <?php
+                                        foreach ($slider as $item) {
+                                            ?>
+                                            <li class="is-selected"
+                                                style="background: url(<?= $item->img ?>/*) no-repeat center;background-color: #F7F7F7;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;"></li>
+                                            <?php
+                                        }
+                                        ?>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="container">
                 <div class="row">
                     <!-- Инфо для событий СТАРТ -->
