@@ -8,6 +8,7 @@ use app\models\Company;
 use app\models\Contacts;
 use app\models\Doc;
 use app\models\FieldOfActivity;
+use app\models\Infrastructure;
 use app\models\Materials;
 use app\models\News;
 use app\models\Page;
@@ -281,5 +282,22 @@ class SiteController extends Controller
         return $this->render('page', [
             'page' => $page,
         ]);
+    }
+
+    public function actionInfrastructure() {
+
+        $infstr = Infrastructure::find()->all();
+        //old
+        $materials = Materials::find()->all();
+        $doc = Doc::find()->all();
+        $section = Section::find()->all();
+        return $this->render('infrastructure',[
+            'infstr' => $infstr,
+            'materials' => $materials,
+            'doc' => $doc,
+            'section' => $section,
+        ]);
+
+
     }
 }

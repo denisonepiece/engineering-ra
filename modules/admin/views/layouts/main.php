@@ -42,6 +42,7 @@ AppAsset::register($this);
             ['label' => 'Компании', 'url' => ['/admin/company']],
             ['label' => 'Слайдер', 'url' => ['/admin/slidermain']],
             ['label' => 'Услуги', 'url' => ['/admin/services']],
+            ['label' => 'Инфраструктура', 'url' => ['/admin/infrastructure']],
             ['label' => 'Материалы', 'url' => ['/admin/materials']],
             ['label' => 'Текстовые страницы', 'url' => ['/admin/page']],
             ['label' => 'Команда', 'url' => ['/admin/team']],
