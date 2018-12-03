@@ -1411,6 +1411,11 @@ textarea {
 
 }
 
+.services-wiget.v2 {
+    left: 0;
+    width: fit-content;
+}
+
 
 .services-wiget:active {
     background-color: #f48047;
@@ -1443,6 +1448,10 @@ textarea {
     justify-content: center;
     transition: all 150ms ease-out;
     left: -100%;
+}
+
+body.noscroll {
+    overflow: hidden;
 }
 
 .modal_div.scroll {
@@ -1525,4 +1534,63 @@ textarea {
 }
 
 
+/**** Кастомные чекбоксы ****/
 
+
+/** Базовые **/
+
+.hide-checkbox + label {
+    text-align: center;
+    display: block;
+    transition: all 200ms ease-out;
+    cursor: pointer;
+    outline: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+    white-space: nowrap; 
+}
+
+.hide-checkbox + label:active {
+    -webkit-transform: translateY(.3em);
+    transform: translateY(.3em);
+}
+
+/* Индивидуальная обертка */
+.checkbox-custom-v1 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.checkbox-custom-v1__position {
+    margin-right: 1em;
+    margin-bottom: 1rem;
+}
+
+.checkbox-custom-v1__position:last-child{
+    margin-right: 0;
+}
+
+/* 1 версия элементов*/
+.checkbox-custom-v1__position .hide-checkbox + label{
+    background-color: #efd0ca;
+    color: #5b4132;
+    font-size: 0.875rem;
+    padding: 0.625em 0.813em
+}
+
+.checkbox-custom-v1__position .hide-checkbox:checked + label {
+    background-color: #ff640e;
+    color: #FFF;
+}
+
+@media screen and (max-width: 767px) {
+    .checkbox-custom-v1__position {
+        margin-bottom: 1rem;
+    }
+
+    .checkbox-custom-v1__position:last-child{
+        margin-bottom: 0;
+    }
+
+}
