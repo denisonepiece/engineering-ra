@@ -53,7 +53,7 @@ $this->title = 'Материалы и публикации';
             <div class="row">
                 <div class="col-md col-sm col-xs">
                     <div class="materials__header">
-                        <h1 class="header-block header-block--bmrg-under">Материалы и публикации</h1>
+                        <h1 class="header-block header-block--bmrg-under">Инфраструктура поддержки предпринимательства</h1>
                     </div>
                 </div>
             </div>
@@ -82,11 +82,11 @@ $this->title = 'Материалы и публикации';
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="col-md-8 col-sm-12 col-xs-12">
                     <div class="tabs__list">
                         <?php foreach ($infstr as $item): ?>
                             <div class="tabs__item tabs__item--active">
-                                <div class="item__block rule-padd-tb-mini">
+                                <div class="item__block base-text">
                                     <?= $item->content ?>
                                 </div>
                             </div>

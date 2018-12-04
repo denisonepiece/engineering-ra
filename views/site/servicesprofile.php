@@ -195,9 +195,8 @@ $this->title = 'Услуга';
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-sm-12 col-xs-12">
-
                         <div class="services-profile__text base-text for-content-ptop">
-                        	                    	<div class="position__name">Описание:</div>
+                        	<div class="position__name">Описание:</div>
                             <?= $services->content ?>
                         </div>
                     </div>
