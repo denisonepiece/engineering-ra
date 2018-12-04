@@ -175,7 +175,9 @@ class SiteController extends Controller
             $do = explode(' ',$do)[1]."-".array_search(explode(' ',$do)[0], $months)."-31";
             $news = News::find()->where(['event'=>Yii::$app->request->get('type')])->andWhere(['between', 'date', $to, $do ])->all();
         }else{
-            $news = News::find()->all();
+            $news = News::find()->orderBy([
+                'date' => SORT_DESC,
+            ])->all();
         }
 //        var_dump($news);
         return $this->render('news',[

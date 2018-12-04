@@ -7,6 +7,7 @@ $this->registerJsFile('@web/js/notification.js', ['depends' => 'app\assets\ApppA
 $this->registerJsFile('@web/js/menu.js', ['depends' => 'app\assets\ApppAsset']);
 
 use yii\bootstrap\ActiveForm;
+
 //use yii\widgets\ActiveForm;
 
 $this->title = 'Материалы и публикации';
@@ -25,20 +26,14 @@ $this->title = 'Материалы и публикации';
             <h1 class="header-block">Оцените качество и полноту информации</h1>
         </div>
         <div class="modal-dialog__modal-body">
-<!--            <div class="checkbox-custom-v1 for-content-mb-v2">-->
-<!---->
-<!--            </div>-->
-<!--            <div class=" form-group btn-group">-->
-<!--                <a href="#" class="btn one-btn">Отправить</a>-->
-<!--            </div>-->
             <?php $form = ActiveForm::begin() ?>
-                <?= $form->field($model, 'stars')->radioList([
-                        '1' => 1,
-                    '2' => 2,
-                    '3' => 3,
-                    '4' => 4,
-                    '5' => 5,
-                ])->label(false) ?>
+            <?= $form->field($model, 'stars')->radioList([
+                '1' => 1,
+                '2' => 2,
+                '3' => 3,
+                '4' => 4,
+                '5' => 5,
+            ])->label(false) ?>
 
             <?= \yii\helpers\Html::submitButton('Отправить', ['class' => 'btn one-btn', 'name' => 'contact-button']) ?>
 
@@ -53,7 +48,8 @@ $this->title = 'Материалы и публикации';
             <div class="row">
                 <div class="col-md col-sm col-xs">
                     <div class="materials__header">
-                        <h1 class="header-block header-block--bmrg-under">Инфраструктура поддержки предпринимательства</h1>
+                        <h1 class="header-block header-block--bmrg-under">Инфраструктура поддержки
+                            предпринимательства</h1>
                     </div>
                 </div>
             </div>
@@ -84,13 +80,17 @@ $this->title = 'Материалы и публикации';
             <div class="row">
                 <div class="col-md-8 col-sm-12 col-xs-12">
                     <div class="tabs__list">
-                        <?php foreach ($infstr as $item): ?>
-                            <div class="tabs__item tabs__item--active">
+                        <?php
+                        $a = 1;
+                        foreach ($infstr as $item): ?>
+                            <div class="tabs__item <?php if ($a == 1) { ?>tabs__item--active<?php } ?>">
                                 <div class="item__block base-text">
                                     <?= $item->content ?>
                                 </div>
                             </div>
-                        <?php endforeach; ?>
+                        <?php
+                        $a++;
+                        endforeach; ?>
                     </div>
                 </div>
             </div>
